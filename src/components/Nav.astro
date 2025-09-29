@@ -1,0 +1,67 @@
+---
+import type { NavItem } from "../types";
+import { NAV_ITEMS } from "../constants";
+
+interface Props {
+  brand?: string;
+  items?: NavItem[];
+}
+
+const {
+  brand = "LOGO",
+  items = NAV_ITEMS
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav>
+  <div class="relative px-30 py-6 z-50">
+    <div class="flex justify-between">
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/"><span class="text-xl font-bold">{brand}</span></a>
+      </div>
+
+      <div class="hidden md:flex space-x-12 items-center">
+        {
+          items.map((item) => (
+            <a href={item.href} class={`font-semibold ${currentPath === item.href ? 'border-b-2' : 'border-transparent'} pb-0.5 hover:border-b-2 hover:border-black`}>
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Hamburger Icon -->
+      <div class="flex items-center md:hidden">
+        <button id="menu-btn" class="font-semibold focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-3 space-y-2">
+    {
+      items.map(
+        (item) => (
+          <a href={item.href} class="block font-semibold text-lg">
+            {item.label}
+          </a>
+        )
+      )
+    }
+  </div>
+</nav>

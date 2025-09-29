@@ -1,0 +1,1 @@
+export { default as BgYellow } from "./BgYellow.astro";

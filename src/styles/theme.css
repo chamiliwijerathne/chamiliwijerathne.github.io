@@ -1,0 +1,16 @@
+@theme {
+    /* FONTS */
+    --font-sans-playfair: "Playfair Display", serif;
+    --font-sans-nunito: "Nunito", sans-serif;
+
+    /* COLORS */
+    --color-primary-500: #fdc435;
+    --color-primary-700: #F1B00E;
+
+    --color-neutral-100: #1a1a1a;
+    --color-neutral-400: #828282;
+    --color-neutral-500: #9a9fa8;
+    --color-neutral-700: #F5F5F5;
+    --color-neutral-800: #f9faff;
+    --color-neutral-900: #ffffff;
+}

@@ -1,0 +1,1 @@
+export const LINKEDIN_URL = "https://www.linkedin.com/in/chamili-wijerathne-765888175/";

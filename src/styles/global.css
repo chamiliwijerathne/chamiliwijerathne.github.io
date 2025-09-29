@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./theme.css";
+
+html {
+  font-family: var(--font-sans-nunito);
+  font-size: 1.125rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-sans-playfair);
+}
+
+h1 {
+   font-size: 4rem;
+   font-weight: bold;
+}
+
+h2 {
+   font-size: 3rem;
+   font-weight: bold;
+}
+
+h3 {
+   font-size: 2.5rem;
+   font-weight: bold;
+}
+
+h4 {
+   font-size: 2rem;
+   font-weight: bold;
+}
+
+h5 {    
+   font-size: 1.75rem;
+   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 1rem;
+  }
+}
