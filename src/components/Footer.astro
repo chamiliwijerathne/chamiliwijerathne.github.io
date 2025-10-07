@@ -1,0 +1,23 @@
+---
+import { EmailIcon, InstagramIcon, LinkedInIcon } from "../assets/icons";
+import { LINKEDIN_URL, INSTAGRAM_URL, EMAIL_URL } from "../constants";
+---
+
+<footer class="md:my-[94px]">
+  <div class="text-center space-y-8">
+    <div class="flex justify-center space-x-6">
+      <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+        <InstagramIcon />
+      </a>
+      <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+        <LinkedInIcon />
+      </a>
+      <a href={EMAIL_URL}>
+        <EmailIcon />
+      </a>
+    </div>
+    <p class="text-neutral-500">
+      © 2025 Chamili Wijerathne. All rights reserved.
+    </p>
+  </div>
+</footer>

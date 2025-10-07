@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { Nav } from "../components";
+import { Footer, Nav } from "../components";
 
 const { title } = Astro.slots;
 ---
@@ -23,7 +23,7 @@ const { title } = Astro.slots;
     <slot name="main" />
 
     <slot name="footer">
-      <footer></footer>
+      <Footer />
     </slot>
   </body>
 </html>

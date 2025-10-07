@@ -25,7 +25,7 @@ const currentPath = Astro.url.pathname;
       <div class="hidden md:flex space-x-12 items-center">
         {
           items.map((item) => (
-            <a href={item.href} class={`font-semibold ${currentPath === item.href ? 'border-b-2' : 'border-transparent'} pb-0.5 hover:border-b-2 hover:border-black`}>
+            <a href={item.href} class={`font-semibold pb-0.5 after:content-[''] after:block after:h-0.5 after:w-full after:rounded after:transition-all after:duration-100 ${currentPath === item.href ? 'after:bg-black' : 'after:bg-transparent hover:after:bg-black'}`}>
               {item.label}
             </a>
           ))
