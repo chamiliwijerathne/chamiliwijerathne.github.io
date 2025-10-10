@@ -1,0 +1,82 @@
+---
+import { Button } from ".";
+
+interface Props {
+    title: string;
+    description: string;
+    titleClassName?: string;
+    descriptionClassName?: string;
+    className?: string;
+    contentClassName?: string;
+    contentWrapperClassName?: string;
+    image?: {
+        src: string;
+        position: string;
+        className?: string;
+        wrapperClassName?: string;
+    }
+    actionButton?: {
+        text: string;
+        href?: {
+            url: string;
+            label?: string;
+            targetBlank?: boolean;
+        };
+        type?: 'primary' | 'secondary' | 'tertiary';
+        style?: {
+            roundedFull?: boolean;
+        };
+        className?: string;
+    };
+}
+
+const { title, description, className, titleClassName, descriptionClassName, contentClassName, contentWrapperClassName, image, actionButton } = Astro.props;
+const { src: imageSrc, position: imagePosition = 'right', className: imageClassName, wrapperClassName: imageWrapperClassName } = image || {};
+const { text: buttonText, href: buttonHref, type: buttonType = 'secondary', style: buttonStyle, className: buttonClassName = 'w-fit' } = actionButton || {};
+
+const containerClass = `flex flex-col md:flex-row shadow-[0_6px_64px_0_rgba(112,144,176,0.1)] rounded-3xl overflow-hidden md:h-[524px] bg-neutral-900 ${className || ''}`.trim();
+const titleClass = `${titleClassName || ''}`.trim();
+const descriptionClass = `text-neutral-400 ${descriptionClassName || ''}`.trim();
+const imageClass = `w-full h-full object-cover ${imageClassName || ''}`.trim();
+const imageWrapperClass = `flex-1 ${imageWrapperClassName || ''}`.trim();
+const contentClass = `m-12 space-y-6 ${contentClassName || ''}`.trim();
+const contentWrapperClass = `flex-1 flex items-center ${contentWrapperClassName || ''}`.trim();
+const actionButtonClass = `w-fit ${buttonClassName || ''}`.trim();
+
+---
+
+<div class={containerClass}>
+    {imagePosition === 'left' && imageSrc && (
+        <div class={imageWrapperClass}>
+            <img
+                src={imageSrc}
+                alt="Card"
+                class={imageClass}
+            />
+        </div>
+    )}
+    <div class={contentWrapperClass}>
+        <div class={contentClass}>
+            <h3 class={titleClass}>{title}</h3>
+            <p class={descriptionClass}>{description}</p>
+            {actionButton && (
+                <Button
+                    text={buttonText || "Action Button"}
+                    href={buttonHref}
+                    type={buttonType}
+                    style={buttonStyle || { roundedFull: true }}
+                    className={actionButtonClass}
+                />
+            )}
+        </div>
+    </div>
+    {imagePosition === 'right' && imageSrc && (
+        <div class={imageWrapperClass}>
+            <img
+                src={imageSrc}
+                alt="Card"
+                class={imageClass}
+            />
+        </div>
+    )}
+</div>

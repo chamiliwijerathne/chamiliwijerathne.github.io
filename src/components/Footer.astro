@@ -1,20 +1,31 @@
 ---
-import { EmailIcon, InstagramIcon, LinkedInIcon } from "../assets/icons";
-import { LINKEDIN_URL, INSTAGRAM_URL, EMAIL_URL } from "../constants";
+import { getCollection } from "astro:content";
+
+const socialEntries = await getCollection("social");
+const orderedSocialLinks = socialEntries.sort((a, b) => a.data.order - b.data.order);
+
 ---
 
 <footer class="md:my-[94px]">
   <div class="text-center space-y-8">
     <div class="flex justify-center space-x-6">
-      <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
-        <InstagramIcon />
-      </a>
-      <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-        <LinkedInIcon />
-      </a>
-      <a href={EMAIL_URL}>
-        <EmailIcon />
-      </a>
+      {orderedSocialLinks.map((entry) => {
+        const { platform, url, id } = entry.data;
+        return (
+          <a
+            href={url}
+            target={id === "gmail" ? "_self" : "_blank"}
+            rel={id === "gmail" ? undefined : "noopener noreferrer"}
+            class="hover:opacity-70 transition-opacity"
+          >
+            <img
+              src={entry.data.icon}
+              alt={`${platform} Icon`}
+              class="w-[48px] h-[48px]"
+            />
+          </a>
+        );
+      })}
     </div>
     <p class="text-neutral-500">
       © 2025 Chamili Wijerathne. All rights reserved.

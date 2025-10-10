@@ -1,6 +1,14 @@
 ---
-import type { NavItem } from "../types";
-import { NAV_ITEMS } from "../constants";
+import { getCollection } from "astro:content";
+
+export interface NavItem {
+  href: string;
+  label: string;
+}
+
+const navItemsEntries = await getCollection("nav");
+const orderedNavItemsEntries = navItemsEntries.sort((a, b) => a.data.order - b.data.order);
+const navItems: NavItem[] = orderedNavItemsEntries.map((item) => item.data);
 
 interface Props {
   brand?: string;
@@ -9,7 +17,7 @@ interface Props {
 
 const {
   brand = "LOGO",
-  items = NAV_ITEMS
+  items = navItems,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;

@@ -1,0 +1,31 @@
+.home {
+  @apply px-30;
+}
+
+.hero-img {
+  @apply absolute top-0 right-0 z-0;
+}
+
+/* Intro Section */
+.intro-section {
+  @apply py-12;
+  @apply md:max-w-[700px];
+}
+
+.role {
+  @apply text-2xl font-bold text-primary-500 mb-3;
+}
+
+.home-content {
+  @apply text-2xl text-neutral-400;
+}
+
+/* Featured Section */
+.featured-section {
+  @apply flex flex-col justify-center space-y-20;
+  @apply md:mt-[194px] mx-auto md:max-w-[992px];
+}
+
+.featured-heading {
+  @apply relative inline-block mx-auto after:content-[''] after:block after:w-1/2 after:border-b-4 after:rounded-xs after:border-primary-500 after:mt-1 after:mx-auto;
+}

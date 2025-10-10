@@ -1,143 +1,96 @@
 ---
+import { getEntry } from "astro:content";
+import { frontmatter, Content } from "../content/home.md";
 import { Layout } from "../layouts";
-import { Button } from "../components";
-import { LINKEDIN_URL } from "../constants";
+import { Button, MediaCard } from "../components";
+
+export interface HomeFrontMatter {
+  role: string;
+  introText: string;
+  fullName: string;
+  heroImage: string;
+  ctaText: string;
+  ctaLink: string;
+  featuredText: string;
+}
+
+const linkedInEntry = await getEntry("social", "linkedin");
+const linkedIn = linkedInEntry?.data ?? null;
+
+const { introText, fullName, role, ctaText, ctaLink, featuredText, heroImage } =
+  frontmatter as HomeFrontMatter;
 ---
 
 <Layout>
-  <div slot="main" class="px-30">
-    <img src="./homePageImage.png" alt="Logo" class="absolute top-0 right-0 z-0" />
+  <div slot="main" class="home">
+    <img src={heroImage} alt="Logo" class="hero-img" />
 
-    <div class="py-12 md:max-w-[700px]">
-      <p class="text-2xl font-bold text-primary-500 mb-3">UI/UX DESIGNER</p>
+    <div class="intro-section">
+      <p class="role">{role}</p>
       <div class="flex flex-col space-y-8">
         <div>
-          <h2 class="leading-tight">Hello, my name is</h2>
-          <h1 class="leading-tight">Chamili Wijerathne</h1>
+          <h2 class="leading-tight">{introText}</h2>
+          <h1 class="leading-tight">{fullName}</h1>
         </div>
-        <p class="text-2xl text-neutral-400">
-          A passionate UI/UX designer. I create clean, user-friendly digital experiences that bring ideas to life through thoughtful design and usability.
-        </p>
+        <Content />
         <div class="flex space-x-4">
-          <Button text="Projects" href={{ url: "/projects" }} />
-          <Button
-            text="LinkedIn"
-            href={{ url: LINKEDIN_URL, targetBlank: true }}
-            type="secondary"
-          />
+          <Button text={ctaText} href={{ url: ctaLink }} />
+          {
+            linkedIn && (
+              <Button
+                text={linkedIn.platform}
+                href={{ url: linkedIn.url, targetBlank: true }}
+                type="secondary"
+              />
+            )
+          }
         </div>
       </div>
     </div>
 
     <div
-      class="flex flex-col justify-center space-y-20 md:mt-[194px] mx-auto md:max-w-[992px]"
+      class="featured-section"
     >
-      <h2
-        class="relative inline-block mx-auto after:content-[''] after:block after:w-1/2 after:border-b-4 after:rounded-xs after:border-primary-500 after:mt-1 after:mx-auto"
-      >
-        Featured
-      </h2>
+      <h2 class="featured-heading">{featuredText}</h2>
 
-      <div
-        class="flex flex-col md:flex-row shadow-[0_6px_64px_0_rgba(112,144,176,0.1)] rounded-3xl overflow-hidden md:h-[524px] bg-neutral-900"
-      >
-        <!-- Left Side: Text -->
-        <div class="flex-1 flex items-center">
-          <div class="m-12 space-y-6">
-            <h3>BeatSpot</h3>
-            <p class="text-neutral-400">
-              BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals.
-            </p>
-            <Button
-              text="View Project"
-              href={{ url: "/projects/beatspot" }}
-              type="secondary"
-              style={{
-                roundedFull: true,
-              }}
-              className="w-fit"
-            />
-            
-          </div>
-        </div>
+      <MediaCard
+        title="BeatSpot"
+        description="BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals."
+        image={{
+          src: "./images/beatSpotCover.png",
+          position: "right",
+        }}
+        actionButton={{
+          text: "View Project",
+          href: { url: "/projects/beatspot" },
+        }}
+      />
 
-        <!-- Right Side: Image -->
-        <div class="flex-1">
-          <img
-            src="./beatSpotCover.png"
-            alt="Card Image"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
+      <MediaCard
+        title="SunRay"
+        description="SunRay is a responsive e-commerce website for a sunglass store, designed with a clean UI and seamless shopping experience across desktop and mobile."
+        image={{
+          src: "./images/sunRayCover.png",
+          position: "left",
+        }}
+        actionButton={{
+          text: "View Project",
+          href: { url: "/projects/sunray" },
+        }}
+      />
 
-      <div
-        class="flex flex-col md:flex-row shadow-[0_6px_64px_0_rgba(112,144,176,0.1)] rounded-3xl overflow-hidden md:h-[524px] bg-neutral-900"
-      >
-        <!-- Left Side: Text -->
-                 <div class="flex-1">
-          <img
-            src="./sunRayCover.png"
-            alt="Card Image"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        
-
-        <!-- Right Side: Image -->
-<div class="flex-1 flex items-center">
-          <div class="m-12 flex flex-col space-y-6 justify-center align-center h-full">
-            <h3>SunRay</h3>
-            <p class="text-neutral-400">
-              SunRay is a responsive e-commerce website for a sunglass store, designed with a clean UI and seamless shopping experience across desktop and mobile.
-            </p>
-            <Button
-              text="View Project"
-              href={{ url: "/projects/beatspot" }}
-              type="secondary"
-              style={{
-                roundedFull: true,
-              }}
-              className="w-fit"
-            />
-            
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="flex flex-col md:flex-row shadow-[0_6px_64px_0_rgba(112,144,176,0.1)] rounded-3xl overflow-hidden md:h-[524px] bg-neutral-900"
-      >
-        <!-- Left Side: Text -->
-        <div class="flex-1 flex items-center">
-          <div class="m-12 flex flex-col space-y-6 justify-center align-center h-full">
-            <h3>Flixio</h3>
-            <p class="text-neutral-400">
-              Flixio is a cross-platform streaming application designed for mobile, tablet, and desktop, allowing users to discover, search, and enjoy movies and series seamlessly across devices.
-            </p>
-            <Button
-              text="View Project"
-              href={{ url: "/projects/beatspot" }}
-              type="secondary"
-              style={{
-                roundedFull: true,
-              }}
-              className="w-fit"
-            />
-            
-          </div>
-        </div>
-
-        <!-- Right Side: Image -->
-        <div class="flex-1">
-          <img
-            src="./flixioCover.png"
-            alt="Card Image"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
+      <MediaCard
+        title="Flixio"
+        description="Flixio is a cross-platform streaming application designed for mobile, tablet, and desktop, allowing users to discover, search, and enjoy movies and series seamlessly across devices."
+        image={{
+          src: "./images/flixioCover.png",
+          position: "right",
+        }}
+        actionButton={{
+          text: "View Project",
+          href: { url: "/projects/flixio" },
+        }}
+      />
     </div>
   </div>
 </Layout>
