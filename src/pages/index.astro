@@ -1,54 +1,22 @@
 ---
-import { getEntry } from "astro:content";
-import { frontmatter, Content } from "../content/home.md";
-import { Layout } from "../layouts";
-import { Button, MediaCard } from "../components";
+import { getEntry } from 'astro:content';
+import { HeroSection } from '../components/sections/hero';
+import { frontmatter } from "../content/pages/home.md";
+import type { HeroSectionType } from '../components/sections/hero';
+import { Layout } from '../layouts';
 
-export interface HomeFrontMatter {
-  role: string;
-  introText: string;
-  fullName: string;
-  heroImage: string;
-  ctaText: string;
-  ctaLink: string;
-  featuredText: string;
-}
-
-const linkedInEntry = await getEntry("social", "linkedin");
+const linkedInEntry = await getEntry('social', 'linkedin');
 const linkedIn = linkedInEntry?.data ?? null;
 
-const { introText, fullName, role, ctaText, ctaLink, featuredText, heroImage } =
-  frontmatter as HomeFrontMatter;
+const { heroSection } = frontmatter;
+
 ---
 
 <Layout>
-  <div slot="main" class="home">
-    <img src={heroImage} alt="Logo" class="hero-img" />
+   <main slot="main" class="home">
+      <HeroSection {...heroSection  as HeroSectionType} />
 
-    <div class="intro-section">
-      <p class="role">{role}</p>
-      <div class="flex flex-col space-y-8">
-        <div>
-          <h2 class="leading-tight">{introText}</h2>
-          <h1 class="leading-tight">{fullName}</h1>
-        </div>
-        <Content />
-        <div class="flex space-x-4">
-          <Button text={ctaText} href={{ url: ctaLink }} />
-          {
-            linkedIn && (
-              <Button
-                text={linkedIn.platform}
-                href={{ url: linkedIn.url, targetBlank: true }}
-                type="secondary"
-              />
-            )
-          }
-        </div>
-      </div>
-    </div>
-
-    <div
+      <!-- <div
       class="featured-section"
     >
       <h2 class="featured-heading">{featuredText}</h2>
@@ -91,6 +59,6 @@ const { introText, fullName, role, ctaText, ctaLink, featuredText, heroImage } =
           href: { url: "/projects/flixio" },
         }}
       />
-    </div>
-  </div>
+    </div> -->
+   </main>
 </Layout>

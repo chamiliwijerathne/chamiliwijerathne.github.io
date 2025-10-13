@@ -1,0 +1,48 @@
+---
+import { ContainerRenderer } from '../../blocks';
+import type { HeroSectionType as Props } from './hero.types';
+
+const { id, backgroundImage, classNames, img, style, containers } = Astro.props;
+
+const baseClass = 'hero-section';
+const extraClasses = Array.isArray(classNames) ? classNames.join(' ') : classNames || '';
+const classes = [baseClass, extraClasses].filter(Boolean).join(' ');
+
+const imgClasses = [
+   'hero-img',
+   Array.isArray(img?.classNames) ? img.classNames.join(' ') : img?.classNames || '',
+]
+   .filter(Boolean)
+   .join(' ');
+---
+
+<section class={classes} id={id} style={style}>
+   {
+      backgroundImage && (
+         <div class="background-image" style={`background-image: url(${backgroundImage});`} />
+      )
+   }
+   {img && <img src={img.src} alt={img.alt} class={imgClasses} style={img.style} />}
+   {containers && containers.map((container) => <ContainerRenderer {...container} />)}
+   <!-- <div class="intro-section">
+    <p class="role">{role}</p>
+    <div class="flex flex-col space-y-8">
+      <div>
+        <h2 class="leading-tight">{introText}</h2>
+        <h1 class="leading-tight">{fullName}</h1>
+      </div>
+      <div class="flex space-x-4">
+        <Button text={ctaText} href={{ url: ctaLink }} />
+        {
+          linkedIn && (
+            <Button
+              text={linkedIn.platform}
+              href={{ url: linkedIn.url, targetBlank: true }}
+              type="secondary"
+            />
+          )
+        }
+      </div>
+    </div>
+  </div> -->
+</section>

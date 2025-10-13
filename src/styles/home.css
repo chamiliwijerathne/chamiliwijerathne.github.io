@@ -1,31 +1,35 @@
 .home {
-  @apply px-30;
+   @apply px-30;
+}
+
+/* Hero Section */
+.home-hero-section {
+   @apply py-12;
+   @apply md:max-w-[700px];
 }
 
 .hero-img {
-  @apply absolute top-0 right-0 z-0;
+   @apply absolute top-0 right-0 z-0;
 }
 
-/* Intro Section */
-.intro-section {
-  @apply py-12;
-  @apply md:max-w-[700px];
+.home-hero-role {
+   @apply text-2xl font-bold text-primary-500 mb-3;
 }
 
-.role {
-  @apply text-2xl font-bold text-primary-500 mb-3;
+.role-description {
+   @apply text-2xl text-neutral-400 mb-8;
 }
 
-.home-content {
-  @apply text-2xl text-neutral-400;
+.cta-container {
+   @apply flex space-x-4;
 }
 
 /* Featured Section */
 .featured-section {
-  @apply flex flex-col justify-center space-y-20;
-  @apply md:mt-[194px] mx-auto md:max-w-[992px];
+   @apply flex flex-col justify-center space-y-20;
+   @apply md:mt-[194px] mx-auto md:max-w-[992px];
 }
 
 .featured-heading {
-  @apply relative inline-block mx-auto after:content-[''] after:block after:w-1/2 after:border-b-4 after:rounded-xs after:border-primary-500 after:mt-1 after:mx-auto;
+   @apply relative inline-block mx-auto after:content-[''] after:block after:w-1/2 after:border-b-4 after:rounded-xs after:border-primary-500 after:mt-1 after:mx-auto;
 }

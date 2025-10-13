@@ -1,7 +1,7 @@
-import { socialCollection } from "./social/config";
-import { navCollection } from "./nav/config";
+import { socialCollection } from './layouts/social/config';
+import { navCollection } from './layouts/nav/config';
 
 export const collections = {
-    social: socialCollection,
-    nav: navCollection,
+   social: socialCollection,
+   nav: navCollection,
 };

@@ -1,11 +1,15 @@
 html {
-  font-family: var(--font-sans-nunito);
-  font-size: 1.125rem;
-  background-color: var(--color-neutral-800);
+   font-family: var(--font-sans-nunito);
+   font-size: 1.125rem;
+   background-color: var(--color-neutral-800);
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-sans-playfair);
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: var(--font-sans-playfair);
 }
 
 h1 {
@@ -28,13 +32,13 @@ h4 {
    font-weight: bold;
 }
 
-h5 {    
+h5 {
    font-size: 1.75rem;
    font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  html {
-    font-size: 1rem;
-  }
+   html {
+      font-size: 1rem;
+   }
 }

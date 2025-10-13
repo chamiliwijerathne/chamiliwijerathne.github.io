@@ -1,0 +1,6 @@
+.hero-section {
+}
+
+.background-image {
+   @apply absolute inset-0 w-full h-full bg-cover bg-center z-0;
+}
