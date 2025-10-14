@@ -19,3 +19,16 @@ export const linkTypeClassMap: Record<LinkVariant, string> = {
    error: '',
    disabled: 'link-disabled',
 };
+
+export const LINK_TARGETS = {
+   SELF: '_self',
+   BLANK: '_blank',
+   PARENT: '_parent',
+   TOP: '_top',
+} as const;
+
+export const LINK_RELS = {
+   NOOPENER: 'noopener',
+   NOREFERRER: 'noreferrer',
+   NOFOLLOW: 'nofollow',
+} as const;

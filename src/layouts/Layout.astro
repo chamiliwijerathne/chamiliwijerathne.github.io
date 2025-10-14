@@ -1,29 +1,31 @@
 ---
-import { Footer, Nav } from "../components/layouts";
-import "../styles/index.css";
+import { NavBar, Footer } from '../components/sections';
+import { navBar } from '../content/header';
+import { footer } from '../content/footer';
+import '../styles/index.css';
 
 const { title } = Astro.slots;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot name="header">
-      <header>
-        <Nav />
-      </header>
-    </slot>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <title>{title}</title>
+   </head>
+   <body>
+      <slot name="header">
+         <header>
+            <NavBar {...navBar} />
+         </header>
+      </slot>
 
-    <slot name="main" />
+      <slot name="main" />
 
-    <slot name="footer">
-      <Footer />
-    </slot>
-  </body>
+      <slot name="footer">
+         <Footer {...footer} />
+      </slot>
+   </body>
 </html>

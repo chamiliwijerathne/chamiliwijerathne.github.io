@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { ContainerRenderer } from '../../blocks';
 import type { HeroSectionType as Props } from './hero.types';
 
@@ -22,7 +23,7 @@ const imgClasses = [
          <div class="background-image" style={`background-image: url(${backgroundImage});`} />
       )
    }
-   {img && <img src={img.src} alt={img.alt} class={imgClasses} style={img.style} />}
+   {img && <Image src={img.src} alt={img.alt} class={imgClasses} style={img.style} loading="eager" />}
    {containers && containers.map((container) => <ContainerRenderer {...container} />)}
    <!-- <div class="intro-section">
     <p class="role">{role}</p>

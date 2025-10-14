@@ -9,7 +9,6 @@ type Props = {
 };
 
 export const BlockRenderer = ({ block }: Props) => {
-   console.log('===== BlockRenderer =====', block);
    switch ((block as BaseBlock).type) {
       case BLOCK_TYPES.HEADING:
          return <Heading {...(block as HeadingBlock)} />;

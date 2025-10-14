@@ -1,14 +1,11 @@
 ---
-import { getEntry } from 'astro:content';
 import { HeroSection } from '../components/sections/hero';
-import { frontmatter } from "../content/pages/home.md";
 import type { HeroSectionType } from '../components/sections/hero';
 import { Layout } from '../layouts';
+import { homePage } from '../content/homePage';
 
-const linkedInEntry = await getEntry('social', 'linkedin');
-const linkedIn = linkedInEntry?.data ?? null;
-
-const { heroSection } = frontmatter;
+const { heroSection } = homePage;
+// const { heroSection } = frontmatter;
 
 ---
 

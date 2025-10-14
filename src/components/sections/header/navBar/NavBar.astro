@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import type { NavBarType as Props } from './nav.types';
+import { NAV_ITEM_TYPES } from './nav.constants';
+
+const currentPath = Astro.url.pathname;
+const { leftItems, rightItems } = Astro.props;
+---
+
+<nav>
+   <div class="relative px-30 py-6 z-50">
+      <div class="flex justify-between">
+         <div class="flex-shrink-0 flex items-center">
+            {
+               leftItems?.map((item) => {
+                  if (item.type === NAV_ITEM_TYPES.IMAGE) {
+                     return (
+                        <a href={item.href.url} target={item.href.target} rel={item.href.rel?.join(' ')}>
+                           {item.img ? (
+                              <Image
+                                 src={item.img.src as ImageMetadata}
+                                 alt={item.img.alt || 'Logo'}
+                                 width={item.img.width}
+                                 height={item.img.height}
+                              />
+                           ) : (
+                              <span class="text-xl font-bold">{item.label || 'Brand'}</span>
+                           )}
+                        </a>
+                     );
+                  }
+                  return null;
+               })
+            }
+         </div>
+
+         <div class="hidden md:flex space-x-12 items-center">
+            {
+               rightItems?.map((item) => {
+                  if (item.type === 'link') {
+                     return (
+                        <a
+                           href={item.href.url}
+                           target={item.href.target}
+                           rel={item.href.rel?.join(' ')}
+                           class={`font-semibold pb-0.5 after:content-[''] after:block after:h-0.5 after:w-full after:rounded after:transition-all after:duration-100 ${currentPath === item.href.url ? 'after:bg-black' : 'after:bg-transparent hover:after:bg-black'}`}
+                        >
+                           {item.label}
+                        </a>
+                     );
+                  }
+                  return null;
+               })
+            }
+         </div>
+
+         <div class="flex items-center md:hidden">
+            <button id="menu-btn" class="font-semibold focus:outline-none">
+               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     stroke-width="2"
+                     d="M4 6h16M4 12h16M4 18h16"></path>
+               </svg>
+            </button>
+         </div>
+      </div>
+   </div>
+   <div id="mobile-menu" class="hidden md:hidden px-4 pb-3 space-y-2">
+      {
+         rightItems?.map((item) => {
+            if (item.type === 'link') {
+               return (
+                  <a
+                     href={item.href.url}
+                     target={item.href.target}
+                     rel={item.href.rel?.join(' ')}
+                     class="block font-semibold text-lg"
+                  >
+                     {item.label}
+                  </a>
+               );
+            }
+            return null;
+         })
+      }
+   </div>
+</nav>
