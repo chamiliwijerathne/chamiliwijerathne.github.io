@@ -3,6 +3,7 @@ import heroHomePage from './../../assets/images/heroHomePage.png';
 import instagramIcon from './../../assets/icons/instagram.svg';
 import linkedinIcon from './../../assets/icons/linkedin.svg';
 import gmailIcon from './../../assets/icons/gmail.svg';
+import sunRayMediaCard from './../../assets/images/sunRayMediaCard.png';
 
 
 export const IMAGES = {
@@ -11,4 +12,5 @@ export const IMAGES = {
    INSTAGRAM_ICON: instagramIcon,
    LINKEDIN_ICON: linkedinIcon,
    GMAIL_ICON: gmailIcon,
+   SUN_RAY_MEDIA_CARD: sunRayMediaCard,
 } as const;

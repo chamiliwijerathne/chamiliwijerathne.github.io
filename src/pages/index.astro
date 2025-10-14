@@ -3,8 +3,9 @@ import { HeroSection } from '../components/sections/hero';
 import type { HeroSectionType } from '../components/sections/hero';
 import { Layout } from '../layouts';
 import { homePage } from '../content/homePage';
+import { SectionTemplate } from '../components/sections/sectionTemplate';
 
-const { heroSection } = homePage;
+const { heroSection, featuredSection } = homePage;
 // const { heroSection } = frontmatter;
 
 ---
@@ -13,6 +14,7 @@ const { heroSection } = homePage;
    <main slot="main" class="home">
       <HeroSection {...heroSection  as HeroSectionType} />
 
+      <SectionTemplate {...featuredSection} />
       <!-- <div
       class="featured-section"
     >

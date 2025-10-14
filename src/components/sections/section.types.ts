@@ -8,7 +8,7 @@ export interface BaseSection<Block = BaseBlock> {
    backgroundImage?: string;
    classNames?: string[];
    style?: CSSProperties;
-   containers?: BaseContainer<Block>[];
+   containers?: BaseContainer[];
 }
 
 export type SectionType = (typeof SECTION_TYPES)[keyof typeof SECTION_TYPES];

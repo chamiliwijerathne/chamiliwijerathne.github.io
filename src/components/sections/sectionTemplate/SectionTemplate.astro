@@ -1,0 +1,13 @@
+---
+import { ContainerRenderer, type BaseContainer } from '../../blocks';
+import type { SectionTemplateType as Props } from './sectionTemplate.types';
+
+const { id, classNames, style, containers } = Astro.props;
+
+const classes = Array.isArray(classNames) ? classNames.join(' ') : classNames || '';
+
+---
+
+<section class={classes} id={id} style={style}>
+   {containers && containers.map((container: BaseContainer) => <ContainerRenderer {...container} />)}
+</section>

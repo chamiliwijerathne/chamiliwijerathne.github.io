@@ -25,25 +25,4 @@ const imgClasses = [
    }
    {img && <Image src={img.src} alt={img.alt} class={imgClasses} style={img.style} loading="eager" />}
    {containers && containers.map((container) => <ContainerRenderer {...container} />)}
-   <!-- <div class="intro-section">
-    <p class="role">{role}</p>
-    <div class="flex flex-col space-y-8">
-      <div>
-        <h2 class="leading-tight">{introText}</h2>
-        <h1 class="leading-tight">{fullName}</h1>
-      </div>
-      <div class="flex space-x-4">
-        <Button text={ctaText} href={{ url: ctaLink }} />
-        {
-          linkedIn && (
-            <Button
-              text={linkedIn.platform}
-              href={{ url: linkedIn.url, targetBlank: true }}
-              type="secondary"
-            />
-          )
-        }
-      </div>
-    </div>
-  </div> -->
 </section>

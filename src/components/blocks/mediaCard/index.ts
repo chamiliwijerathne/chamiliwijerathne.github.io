@@ -1,2 +1,2 @@
-export { default as MediaCard } from './MediaCard.astro';
+export * from './MediaCard';
 export * from './mediaCard.types';

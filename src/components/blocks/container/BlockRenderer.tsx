@@ -1,21 +1,24 @@
 import { BLOCK_TYPES } from '../block.constants';
-import type { BaseBlock } from '../block.types';
-import { Button, type ButtonBlock } from '../button';
-import { Heading, type HeadingBlock } from '../heading';
-import { Paragraph, type ParagraphBlock } from '../paragraph';
+import type { Block } from '../block.types';
+import { Button, } from '../button';
+import { Heading } from '../heading';
+import { Paragraph } from '../paragraph';
+import { MediaCard } from '../mediaCard';
 
 type Props = {
-   block: BaseBlock;
+   block: Block;
 };
 
 export const BlockRenderer = ({ block }: Props) => {
-   switch ((block as BaseBlock).type) {
+   switch ((block).type) {
       case BLOCK_TYPES.HEADING:
-         return <Heading {...(block as HeadingBlock)} />;
+         return <Heading {...block} />;
       case BLOCK_TYPES.PARAGRAPH:
-         return <Paragraph {...(block as ParagraphBlock)} />;
+         return <Paragraph {...block} />;
       case BLOCK_TYPES.BUTTON:
-         return <Button {...(block as ButtonBlock)} />;
+         return <Button {...block} />;
+      case BLOCK_TYPES.MEDIA_CARD:
+         return <MediaCard {...block} />;
       default:
          return null;
    }
