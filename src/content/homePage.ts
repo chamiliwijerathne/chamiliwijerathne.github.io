@@ -1,4 +1,9 @@
-import { BLOCK_TYPES, BUTTON_VARIANTS, LINK_TARGETS, SUB_CONTAINER_TYPES } from '../components/blocks';
+import {
+   BLOCK_TYPES,
+   BUTTON_VARIANTS,
+   LINK_TARGETS,
+   SUB_CONTAINER_TYPES,
+} from '../components/blocks';
 import { SECTION_TYPES } from '../components/sections/section.constants';
 import type { HomePageType } from '../types';
 import { IMAGES } from './constants/images';
@@ -101,7 +106,16 @@ export const homePage: HomePageType = {
                },
                {
                   id: 'sun-ray-media-card',
-                  classNames: ['flex', 'flex-col', 'md:flex-row', 'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]', 'rounded-3xl', 'overflow-hidden', 'md:h-[524px]', 'bg-neutral-900'],
+                  classNames: [
+                     'flex',
+                     'flex-col',
+                     'md:flex-row',
+                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
+                     'rounded-3xl',
+                     'overflow-hidden',
+                     'md:h-[524px]',
+                     'bg-neutral-900',
+                  ],
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.MEDIA_CARD,
                   image: {
@@ -110,39 +124,46 @@ export const homePage: HomePageType = {
                      src: '/src/assets/images/sunRayMediaCard.png',
                      alt: 'Sun Ray Media Card',
                      position: 'right',
-                     classNames:['w-full', 'h-full', 'object-cover'],
+                     classNames: ['w-full', 'h-full', 'object-cover'],
                      wrapperClassNames: ['flex-1'],
                   },
                   containers: [
                      {
                         id: 'sun-ray-media-card-content-wrapper',
-                        classNames: ['flex-1', 'flex', 'flex-col', 'm-12', 'space-y-6', 'items-center', 'justify-center'],
+                        classNames: ['flex-1', 'flex', 'items-center'],
                         subContainers: [
                            {
                               id: 'sun-ray-title',
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.HEADING,
-                              text: 'SunRay',
-                              level: 3,
-                           },
-                           {
-                              id: 'sun-ray-description',
-                              classNames: ['text-neutral-400'],
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.PARAGRAPH,
-                              text: 'SunRay is a responsive e-commerce website for a sunglass store, designed with a clean UI and seamless shopping experience across desktop and mobile.',
-                           },
-                           {
-                              id: 'sun-ray-cta-button',
-                              classNames: ['rounded-lg', 'w-fit'],
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.BUTTON,
-                              variant: BUTTON_VARIANTS.SECONDARY,
-                              href: {
-                                 id: 'sun-ray-link',
-                                 url: '/projects/sunray',
-                                 label: 'View Project'
-                              },
+                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
+                              classNames: ['m-12', 'space-y-6'],
+                              subContainers: [
+                                 {
+                                    id: 'sun-ray-title',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.HEADING,
+                                    text: 'SunRay',
+                                    level: 3,
+                                 },
+                                 {
+                                    id: 'sun-ray-description',
+                                    classNames: ['text-neutral-400'],
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.PARAGRAPH,
+                                    text: 'SunRay is a responsive e-commerce website for a sunglass store, designed with a clean UI and seamless shopping experience across desktop and mobile.',
+                                 },
+                                 {
+                                    id: 'sun-ray-cta-button',
+                                    classNames: ['rounded-full', 'w-fit'],
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.BUTTON,
+                                    variant: BUTTON_VARIANTS.SECONDARY,
+                                    href: {
+                                       id: 'sun-ray-link',
+                                       url: '/projects/sunray',
+                                       label: 'View Project',
+                                    },
+                                 },
+                              ],
                            },
                         ],
                      },
@@ -150,7 +171,16 @@ export const homePage: HomePageType = {
                },
                {
                   id: 'beat-spot-media-card',
-                  classNames: ['flex', 'flex-col', 'md:flex-row-reverse', 'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]', 'rounded-3xl', 'overflow-hidden', 'md:h-[524px]', 'bg-neutral-900'],
+                  classNames: [
+                     'flex',
+                     'flex-col',
+                     'md:flex-row-reverse',
+                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
+                     'rounded-3xl',
+                     'overflow-hidden',
+                     'md:h-[524px]',
+                     'bg-neutral-900',
+                  ],
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.MEDIA_CARD,
                   image: {
@@ -159,39 +189,46 @@ export const homePage: HomePageType = {
                      src: '/src/assets/images/beatSpotMediaCard.png',
                      alt: 'Beat Spot Media Card',
                      position: 'left',
-                     classNames:['w-full', 'h-full', 'object-cover'],
-                     wrapperClassNames: ['flex-1', 'order-1', 'md:order-none'],
+                     classNames: ['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1', 'order-2'],
                   },
                   containers: [
                      {
                         id: 'beat-spot-media-card-title',
-                        classNames: ['flex-1', 'flex', 'flex-col', 'm-12', 'space-y-6', 'items-center', 'justify-center'],
+                        classNames: ['flex-1', 'order-1', 'flex', 'items-center'],
                         subContainers: [
                            {
-                              id: 'beat-spot-title',
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.HEADING,
-                              text: 'BeatSpot',
-                              level: 3,
-                           },
-                           {
-                              id: 'beat-spot-description',
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.PARAGRAPH,
-                              text: 'BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals.',
-                              classNames: ['text-neutral-400'],
-                           },
-                           {
-                              id: 'beat-spot-cta-button',
-                              classNames: ['rounded-lg', 'w-fit'],
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.BUTTON,
-                              variant: BUTTON_VARIANTS.SECONDARY,
-                              href: {
-                                 id: 'beat-spot-link',
-                                 url: '/projects/beatspot',
-                                 label: 'View Project',
-                              },
+                              id: 'beat-spot-title-container',
+                              classNames: ['m-12', 'space-y-6'],
+                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
+                              subContainers: [
+                                 {
+                                    id: 'beat-spot-title',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.HEADING,
+                                    text: 'BeatSpot',
+                                    level: 3,
+                                 },
+                                 {
+                                    id: 'beat-spot-description',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.PARAGRAPH,
+                                    text: 'BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals.',
+                                    classNames: ['text-neutral-400'],
+                                 },
+                                 {
+                                    id: 'beat-spot-cta-button',
+                                    classNames: ['rounded-full', 'w-fit'],
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.BUTTON,
+                                    variant: BUTTON_VARIANTS.SECONDARY,
+                                    href: {
+                                       id: 'beat-spot-link',
+                                       url: '/projects/beatspot',
+                                       label: 'View Project',
+                                    },
+                                 },
+                              ],
                            },
                         ],
                      },
@@ -199,7 +236,16 @@ export const homePage: HomePageType = {
                },
                {
                   id: 'flixio-media-card',
-                  classNames: ['flex', 'flex-col', 'md:flex-row', 'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]', 'rounded-3xl', 'overflow-hidden', 'md:h-[524px]', 'bg-neutral-900'],
+                  classNames: [
+                     'flex',
+                     'flex-col',
+                     'md:flex-row',
+                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
+                     'rounded-3xl',
+                     'overflow-hidden',
+                     'md:h-[524px]',
+                     'bg-neutral-900',
+                  ],
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.MEDIA_CARD,
                   image: {
@@ -214,38 +260,49 @@ export const homePage: HomePageType = {
                   containers: [
                      {
                         id: 'flixio-media-card-title',
-                        classNames: ['flex-1', 'flex', 'flex-col', 'm-12', 'space-y-6', 'items-center', 'justify-center'],
+                        classNames: [
+                           'flex-1',
+                           'flex',
+                           'items-center',
+                        ],
                         subContainers: [
                            {
-                              id: 'flixio-title',
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.HEADING,
-                              text: 'Flixio',
-                              level: 3,
-                           },
-                           {
-                              id: 'flixio-description',
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.PARAGRAPH,
-                              text: 'Flixio is a cross-platform streaming application designed for mobile, tablet, and desktop, allowing users to discover, search, and enjoy movies and series seamlessly across devices.',
-                              classNames: ['text-neutral-400'],
-                           },
-                           {
-                              id: 'flixio-cta-button',
-                              subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                              type: BLOCK_TYPES.BUTTON,
-                              variant: BUTTON_VARIANTS.SECONDARY,
-                              href: {
-                                 id: 'flixio-website-link',
-                                 url: '/projects/flixio',
-                                 label: 'View Project',
-                              },
-                              classNames: ['rounded-lg', 'w-fit'],
+                              id: 'flixio-title-container',
+                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
+                              classNames: ['m-12', 'space-y-6'],
+                              subContainers: [
+                                 {
+                                    id: 'flixio-title',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.HEADING,
+                                    text: 'Flixio',
+                                    level: 3,
+                                 },
+                                 {
+                                    id: 'flixio-description',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.PARAGRAPH,
+                                    text: 'Flixio is a cross-platform streaming application designed for mobile, tablet, and desktop, allowing users to discover, search, and enjoy movies and series seamlessly across devices.',
+                                    classNames: ['text-neutral-400'],
+                                 },
+                                 {
+                                    id: 'flixio-cta-button',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.BUTTON,
+                                    variant: BUTTON_VARIANTS.SECONDARY,
+                                    href: {
+                                       id: 'flixio-website-link',
+                                       url: '/projects/flixio',
+                                       label: 'View Project',
+                                    },
+                                    classNames: ['rounded-full', 'w-fit'],
+                                 },
+                              ],
                            },
                         ],
                      },
                   ],
-               }
+               },
             ],
          },
       ],

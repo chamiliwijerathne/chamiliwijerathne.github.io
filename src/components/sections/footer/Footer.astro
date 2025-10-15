@@ -8,7 +8,7 @@ const { id, items, classNames, copyRight } = Astro.props;
 
 <footer class="md:my-[94px]">
    <div class="text-center space-y-8">
-      <div class="flex justify-center space-x-6">
+      <div class="flex justify-center items-center space-x-6">
          {
             (items ?? []).map((item) => {
                if (item.type === NAV_ITEM_TYPES.IMAGE) {
