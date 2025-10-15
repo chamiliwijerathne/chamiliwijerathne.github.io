@@ -63,5 +63,12 @@ export const footer: FooterType = {
          },
       },
    ],
+   img: {
+      id: 'footer-image',
+      src: IMAGES.FOOTER,
+      alt: 'Footer Background',
+      classNames: ['footer-img'],
+      loading: 'eager',
+   },
    copyRight: '© 2025 Chamili Wijerathne. All rights reserved.',
 };

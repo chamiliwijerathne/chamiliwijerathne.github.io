@@ -1,0 +1,19 @@
+.projects {
+   @apply px-30;
+}
+
+/* Hero Section */
+.projects-hero-img {
+   @apply absolute top-0 right-0 z-0;
+}
+
+
+/* Featured Section */
+.projects-section {
+   @apply flex flex-col justify-center space-y-20;
+   @apply md:mt-[80px] mx-auto md:max-w-[992px];
+}
+
+.projects-heading {
+   @apply relative inline-block mx-auto after:content-[''] after:block after:w-1/2 after:border-b-4 after:rounded-xs after:border-primary-500 after:mt-1 after:mx-auto;
+}

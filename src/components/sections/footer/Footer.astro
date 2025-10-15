@@ -3,10 +3,17 @@ import { Image } from 'astro:assets';
 import type { FooterType as Props } from './footer.types';
 import { NAV_ITEM_TYPES } from '../header';
 
-const { id, items, classNames, copyRight } = Astro.props;
+const { id, items, classNames, copyRight, img } = Astro.props;
+
+const imgClasses = [
+   'footer-img',
+   Array.isArray(img?.classNames) ? img.classNames.join(' ') : img?.classNames || '',
+]
+   .filter(Boolean)
+   .join(' ');
 ---
 
-<footer class="md:my-[94px]">
+<footer class="md:pt-[94px]">
    <div class="text-center space-y-8">
       <div class="flex justify-center items-center space-x-6">
          {
@@ -51,8 +58,9 @@ const { id, items, classNames, copyRight } = Astro.props;
             })
          }
       </div>
-      <p class="text-neutral-500">
+      <p class="text-neutral-500 md:pb-[94px]">
          {copyRight || ''}
       </p>
+      {img && <div class="relative"><Image src={img.src as ImageMetadata} alt={img.alt || ''} class={imgClasses} style={img.style} loading={img.loading as any || 'eager'} /></div>}
    </div>
 </footer>

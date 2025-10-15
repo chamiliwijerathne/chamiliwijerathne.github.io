@@ -6,8 +6,6 @@ import { homePage } from '../content/homePage';
 import { SectionTemplate } from '../components/sections/sectionTemplate';
 
 const { heroSection, featuredSection } = homePage;
-// const { heroSection } = frontmatter;
-
 ---
 
 <Layout>
@@ -15,49 +13,5 @@ const { heroSection, featuredSection } = homePage;
       <HeroSection {...heroSection  as HeroSectionType} />
 
       <SectionTemplate {...featuredSection} />
-      <!-- <div
-      class="featured-section"
-    >
-      <h2 class="featured-heading">{featuredText}</h2>
-
-      <MediaCard
-        title="BeatSpot"
-        description="BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals."
-        image={{
-          src: "./images/beatSpotCover.png",
-          position: "right",
-        }}
-        actionButton={{
-          text: "View Project",
-          href: { url: "/projects/beatspot" },
-        }}
-      />
-
-      <MediaCard
-        title="SunRay"
-        description="SunRay is a responsive e-commerce website for a sunglass store, designed with a clean UI and seamless shopping experience across desktop and mobile."
-        image={{
-          src: "./images/sunRayCover.png",
-          position: "left",
-        }}
-        actionButton={{
-          text: "View Project",
-          href: { url: "/projects/sunray" },
-        }}
-      />
-
-      <MediaCard
-        title="Flixio"
-        description="Flixio is a cross-platform streaming application designed for mobile, tablet, and desktop, allowing users to discover, search, and enjoy movies and series seamlessly across devices."
-        image={{
-          src: "./images/flixioCover.png",
-          position: "right",
-        }}
-        actionButton={{
-          text: "View Project",
-          href: { url: "/projects/flixio" },
-        }}
-      />
-    </div> -->
    </main>
 </Layout>

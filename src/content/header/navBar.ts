@@ -39,18 +39,6 @@ export const navBar: NavBarType = {
          },
       },
       {
-         id: "about",
-         type: NAV_ITEM_TYPES.LINK,
-         label: "About",
-         href: {
-            id: "about-link",
-            label: "About",
-            url: "/about",
-            target: LINK_TARGETS.SELF,
-            rel: [LINK_RELS.NOOPENER, LINK_RELS.NOREFERRER],
-         },
-      },
-      {
          id: "projects",
          type: NAV_ITEM_TYPES.LINK,
          label: "Projects",
@@ -58,6 +46,18 @@ export const navBar: NavBarType = {
             id: "projects-link",
             label: "Projects",
             url: "/projects",
+            target: LINK_TARGETS.SELF,
+            rel: [LINK_RELS.NOOPENER, LINK_RELS.NOREFERRER],
+         },
+      },
+      {
+         id: "about",
+         type: NAV_ITEM_TYPES.LINK,
+         label: "About",
+         href: {
+            id: "about-link",
+            label: "About",
+            url: "/about",
             target: LINK_TARGETS.SELF,
             rel: [LINK_RELS.NOOPENER, LINK_RELS.NOREFERRER],
          },

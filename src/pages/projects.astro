@@ -1,7 +1,17 @@
 ---
+import { HeroSection } from '../components/sections/hero';
+import type { HeroSectionType } from '../components/sections/hero';
 import { Layout } from '../layouts';
+import { projectsPage } from '../content/projectsPage';
+import { SectionTemplate } from '../components/sections/sectionTemplate';
+
+const { heroSection, projectsSection } = projectsPage;
 ---
 
 <Layout>
-	<h1 slot="main" class="text-2xl">This is Projects Page</h1>
+   <main slot="main" class="projects" id="projects">
+      <HeroSection {...heroSection  as HeroSectionType} />
+
+      <SectionTemplate {...projectsSection} />
+   </main>
 </Layout>

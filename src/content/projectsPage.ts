@@ -5,105 +5,36 @@ import {
    SUB_CONTAINER_TYPES,
 } from '../components/blocks';
 import { SECTION_TYPES } from '../components/sections/section.constants';
-import type { HomePageType } from '../types';
+import type { ProjectsPageType } from '../types';
 import { IMAGES } from './constants/images';
 
-export const homePage: HomePageType = {
+export const projectsPage: ProjectsPageType = {
    heroSection: {
-      id: 'home-hero-section',
+      id: 'projects-hero-section',
       type: SECTION_TYPES.HERO,
-      classNames: ['home-hero-section'],
-      containers: [
-         {
-            id: 'home-hero-content-container',
-            subContainers: [
-               {
-                  id: 'role-text',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.PARAGRAPH,
-                  text: 'UI/UX DESIGNER',
-                  classNames: ['home-hero-role'],
-               },
-               {
-                  id: 'intro-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.HEADING,
-                  text: 'Hello, my name is',
-                  level: 2,
-                  classNames: ['leading-tight'],
-               },
-               {
-                  id: 'full-name-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.HEADING,
-                  text: 'Chamili Wijerathne',
-                  level: 1,
-                  classNames: ['leading-tight', 'mb-8'],
-               },
-               {
-                  id: 'role-description',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.PARAGRAPH,
-                  text: 'A passionate UI/UX designer. I create clean, user-friendly digital experiences that bring ideas to life through thoughtful design and usability.',
-                  classNames: ['role-description'],
-               },
-               {
-                  id: 'cta-buttons-container',
-                  subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
-                  classNames: ['cta-container'],
-                  subContainers: [
-                     {
-                        id: 'projects-button',
-                        subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                        type: BLOCK_TYPES.BUTTON,
-                        variant: 'primary',
-                        href: {
-                           id: 'projects-link',
-                           url: '/projects',
-                           label: 'Projects',
-                        },
-                        classNames: ['cta-button', 'rounded-lg'],
-                     },
-                     {
-                        id: 'linkedin-button',
-                        subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                        type: BLOCK_TYPES.BUTTON,
-                        variant: 'secondary',
-                        href: {
-                           id: 'linkedin-link',
-                           url: '/projects',
-                           label: 'LinkedIn',
-                           target: LINK_TARGETS.BLANK,
-                        },
-                        classNames: ['cta-button', 'rounded-lg'],
-                     },
-                  ],
-               },
-            ],
-         },
-      ],
+      classNames: ['projects-hero-section'],
       img: {
-         id: 'home-hero-image',
-         src: IMAGES.HERO_HOME_PAGE as ImageMetadata,
+         id: 'projects-hero-image',
+         src: IMAGES.HERO_PROJECTS_PAGE as ImageMetadata,
          alt: 'Hero',
-         classNames: ['hero-img'],
+         classNames: ['projects-hero-img'],
          loading: 'eager',
       },
    },
-   featuredSection: {
-      id: 'home-featured-section',
+   projectsSection: {
+      id: 'projects-section',
       containers: [
          {
-            id: 'home-featured-container',
-            classNames: ['home-featured-section'],
+            id: 'projects-container',
+            classNames: ['projects-section'],
             subContainers: [
                {
-                  id: 'featured-heading',
+                  id: 'heading',
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
-                  text: 'Featured',
+                  text: 'Projects',
                   level: 2,
-                  classNames: ['featured-heading', 'mb-4'],
+                  classNames: ['projects-heading', 'mb-4'],
                },
                {
                   id: 'sun-ray-media-card',
@@ -261,11 +192,7 @@ export const homePage: HomePageType = {
                   containers: [
                      {
                         id: 'flixio-media-card-title',
-                        classNames: [
-                           'flex-1',
-                           'flex',
-                           'items-center',
-                        ],
+                        classNames: ['flex-1', 'flex', 'items-center'],
                         subContainers: [
                            {
                               id: 'flixio-title-container',
@@ -297,6 +224,136 @@ export const homePage: HomePageType = {
                                        label: 'View Project',
                                     },
                                     classNames: ['rounded-full', 'w-fit'],
+                                 },
+                              ],
+                           },
+                        ],
+                     },
+                  ],
+               },
+               {
+                  id: 'login-flow-media-card',
+                  classNames: [
+                     'flex',
+                     'flex-col',
+                     'md:flex-row-reverse',
+                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
+                     'rounded-3xl',
+                     'overflow-hidden',
+                     'md:h-[524px]',
+                     'bg-neutral-900',
+                  ],
+                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  type: BLOCK_TYPES.MEDIA_CARD,
+                  image: {
+                     id: 'login-flow-media-card-image',
+                     type: BLOCK_TYPES.IMAGE,
+                     src: '/src/assets/images/loginFlowMediaCard.png',
+                     alt: 'Login Flow Media Card',
+                     position: 'left',
+                     classNames: ['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1', 'order-2'],
+                  },
+                  containers: [
+                     {
+                        id: 'login-flow-media-card-title',
+                        classNames: ['flex-1', 'order-1', 'flex', 'items-center'],
+                        subContainers: [
+                           {
+                              id: 'login-flow-title-container',
+                              classNames: ['m-12', 'space-y-6'],
+                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
+                              subContainers: [
+                                 {
+                                    id: 'login-flow-title',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.HEADING,
+                                    text: 'Login Flow',
+                                    level: 3,
+                                 },
+                                 {
+                                    id: 'login-flow-description',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.PARAGRAPH,
+                                    text: 'A complete mobile authentication flow for BeatSpot, featuring onboarding, sign in/up, password recovery, and error handling—designed for a seamless user experience.',
+                                    classNames: ['text-neutral-400'],
+                                 },
+                                 {
+                                    id: 'login-flow-cta-button',
+                                    classNames: ['rounded-full', 'w-fit'],
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.BUTTON,
+                                    variant: BUTTON_VARIANTS.SECONDARY,
+                                    href: {
+                                       id: 'login-flow-link',
+                                       url: '/projects/login-flow',
+                                       label: 'View Project',
+                                    },
+                                 },
+                              ],
+                           },
+                        ],
+                     },
+                  ],
+               },
+               {
+                  id: 'portfolio-media-card',
+                  classNames: [
+                     'flex',
+                     'flex-col',
+                     'md:flex-row',
+                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
+                     'rounded-3xl',
+                     'overflow-hidden',
+                     'md:h-[524px]',
+                     'bg-neutral-900',
+                  ],
+                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  type: BLOCK_TYPES.MEDIA_CARD,
+                  image: {
+                     id: 'portfolio-media-card-image',
+                     type: BLOCK_TYPES.IMAGE,
+                     src: '/src/assets/images/portfolioMediaCard.png',
+                     alt: 'Portfolio Media Card',
+                     position: 'right',
+                     classNames: ['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1'],
+                  },
+                  containers: [
+                     {
+                        id: 'portfolio-media-card-title',
+                        classNames: ['flex-1', 'flex', 'items-center'],
+                        subContainers: [
+                           {
+                              id: 'portfolio-title-container',
+                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
+                              classNames: ['m-12', 'space-y-6'],
+                              subContainers: [
+                                 {
+                                    id: 'portfolio-title',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.HEADING,
+                                    text: 'Portfolio Website',
+                                    level: 3,
+                                 },
+                                 {
+                                    id: 'portfolio-description',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.PARAGRAPH,
+                                    text: 'A personal portfolio website project for web, showcasing UI/UX design and frontend development skills, built for desktop and mobile experiences.',
+                                    classNames: ['text-neutral-400'],
+                                 },
+                                 {
+                                    id: 'portfolio-cta-button',
+                                    classNames: ['rounded-full', 'w-fit'],
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.BUTTON,
+                                    variant: BUTTON_VARIANTS.SECONDARY,
+                                    href: {
+                                       id: 'portfolio-link',
+                                       url: '/projects/portfolio',
+                                       label: 'View Project',
+                                    },
                                  },
                               ],
                            },
