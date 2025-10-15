@@ -36,6 +36,5 @@ import type { ImageBlock } from '../image';
 export interface MediaCardBlockType extends BaseBlock {
    type: typeof BLOCK_TYPES.MEDIA_CARD;
    image: ImageBlock & { position: 'left' | 'right', wrapperClassNames?: string[]; src?: string; };
-   contentWrapperClassNames?: string[];
    containers?: BaseContainer[];
 }

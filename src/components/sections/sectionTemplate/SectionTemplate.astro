@@ -8,6 +8,6 @@ const classes = Array.isArray(classNames) ? classNames.join(' ') : classNames ||
 
 ---
 
-<section class={classes} id={id} style={style}>
+<section class={classes || undefined} id={id} style={style}>
    {containers && containers.map((container: BaseContainer) => <ContainerRenderer {...container} />)}
 </section>

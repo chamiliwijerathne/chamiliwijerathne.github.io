@@ -1,4 +1,4 @@
-import { BLOCK_TYPES, LINK_TARGETS, SUB_CONTAINER_TYPES } from '../components/blocks';
+import { BLOCK_TYPES, BUTTON_VARIANTS, LINK_TARGETS, SUB_CONTAINER_TYPES } from '../components/blocks';
 import { SECTION_TYPES } from '../components/sections/section.constants';
 import type { HomePageType } from '../types';
 import { IMAGES } from './constants/images';
@@ -86,21 +86,22 @@ export const homePage: HomePageType = {
    },
    featuredSection: {
       id: 'home-featured-section',
-      classNames: ['home-featured-section'],
       containers: [
          {
             id: 'home-featured-container',
+            classNames: ['home-featured-section'],
             subContainers: [
                {
                   id: 'featured-heading',
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
-                  text: 'Featured Projects',
+                  text: 'Featured',
                   level: 2,
                   classNames: ['featured-heading', 'mb-4'],
                },
                {
                   id: 'sun-ray-media-card',
+                  classNames: ['flex', 'flex-col', 'md:flex-row', 'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]', 'rounded-3xl', 'overflow-hidden', 'md:h-[524px]', 'bg-neutral-900'],
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.MEDIA_CARD,
                   image: {
@@ -109,55 +110,47 @@ export const homePage: HomePageType = {
                      src: '/src/assets/images/sunRayMediaCard.png',
                      alt: 'Sun Ray Media Card',
                      position: 'right',
-                     classNames: ['rounded-lg'],
-                     wrapperClassNames: [
-                        'featured-media-card-image-wrapper',
-                        'rounded-lg',
-                        'overflow-hidden',
-                        'shadow-lg',
-                     ],
+                     classNames:['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1'],
                   },
-                  contentWrapperClassNames: ['featured-media-card-content-wrapper', 'p-6'],
                   containers: [
                      {
-                        id: 'sun-ray-media-card-title',
-                        classNames: ['featured-media-card-title', 'mb-2'],
+                        id: 'sun-ray-media-card-content-wrapper',
+                        classNames: ['flex-1', 'flex', 'flex-col', 'm-12', 'space-y-6', 'items-center', 'justify-center'],
                         subContainers: [
                            {
                               id: 'sun-ray-title',
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.HEADING,
-                              text: 'Sun Ray - Media Agency Website',
+                              text: 'SunRay',
                               level: 3,
-                              classNames: ['mb-2'],
                            },
                            {
                               id: 'sun-ray-description',
+                              classNames: ['text-neutral-400'],
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.PARAGRAPH,
-                              text: 'A modern, responsive website for a media agency, showcasing services, portfolio, and client testimonials.',
-                              classNames: ['mb-4'],
+                              text: 'SunRay is a responsive e-commerce website for a sunglass store, designed with a clean UI and seamless shopping experience across desktop and mobile.',
                            },
                            {
                               id: 'sun-ray-cta-button',
+                              classNames: ['rounded-lg', 'w-fit'],
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.BUTTON,
-                              variant: 'primary',
+                              variant: BUTTON_VARIANTS.SECONDARY,
                               href: {
-                                 id: 'sun-ray-website-link',
-                                 url: 'https://sunray-media-agency.com',
-                                 label: 'View Project',
-                                 target: LINK_TARGETS.BLANK,
+                                 id: 'sun-ray-link',
+                                 url: '/projects/sunray',
+                                 label: 'View Project'
                               },
-                              classNames: ['rounded-lg'],
                            },
                         ],
                      },
                   ],
-                  classNames: ['featured-media-card'],
                },
                {
                   id: 'beat-spot-media-card',
+                  classNames: ['flex', 'flex-col', 'md:flex-row-reverse', 'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]', 'rounded-3xl', 'overflow-hidden', 'md:h-[524px]', 'bg-neutral-900'],
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.MEDIA_CARD,
                   image: {
@@ -166,55 +159,47 @@ export const homePage: HomePageType = {
                      src: '/src/assets/images/beatSpotMediaCard.png',
                      alt: 'Beat Spot Media Card',
                      position: 'left',
-                     classNames: ['rounded-lg'],
-                     wrapperClassNames: [
-                        'featured-media-card-image-wrapper',
-                        'rounded-lg',
-                        'overflow-hidden',
-                        'shadow-lg',
-                     ],
+                     classNames:['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1', 'order-1', 'md:order-none'],
                   },
-                  contentWrapperClassNames: ['featured-media-card-content-wrapper', 'p-6'],
                   containers: [
                      {
                         id: 'beat-spot-media-card-title',
-                        classNames: ['featured-media-card-title', 'mb-2'],
+                        classNames: ['flex-1', 'flex', 'flex-col', 'm-12', 'space-y-6', 'items-center', 'justify-center'],
                         subContainers: [
                            {
                               id: 'beat-spot-title',
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.HEADING,
-                              text: 'Beat Spot - Music Streaming App',
+                              text: 'BeatSpot',
                               level: 3,
-                              classNames: ['mb-2'],
                            },
                            {
                               id: 'beat-spot-description',
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.PARAGRAPH,
-                              text: 'A sleek, user-friendly music streaming app with personalized playlists, social sharing, and offline listening.',
-                              classNames: ['mb-4'],
+                              text: 'BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals.',
+                              classNames: ['text-neutral-400'],
                            },
                            {
                               id: 'beat-spot-cta-button',
+                              classNames: ['rounded-lg', 'w-fit'],
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.BUTTON,
-                              variant: 'primary',
+                              variant: BUTTON_VARIANTS.SECONDARY,
                               href: {
-                                 id: 'beat-spot-website-link',
-                                 url: 'https://beatspot-music-app.com',
+                                 id: 'beat-spot-link',
+                                 url: '/projects/beatspot',
                                  label: 'View Project',
-                                 target: LINK_TARGETS.BLANK,
                               },
-                              classNames: ['rounded-lg'],
                            },
                         ],
                      },
                   ],
-                  classNames: ['featured-media-card', 'mt-8'],
                },
                {
                   id: 'flixio-media-card',
+                  classNames: ['flex', 'flex-col', 'md:flex-row', 'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]', 'rounded-3xl', 'overflow-hidden', 'md:h-[524px]', 'bg-neutral-900'],
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                   type: BLOCK_TYPES.MEDIA_CARD,
                   image: {
@@ -223,52 +208,43 @@ export const homePage: HomePageType = {
                      src: '/src/assets/images/flixioMediaCard.png',
                      alt: 'Flixio Media Card',
                      position: 'right',
-                     classNames: ['rounded-lg'],
-                     wrapperClassNames: [
-                        'featured-media-card-image-wrapper',
-                        'rounded-lg',
-                        'overflow-hidden',
-                        'shadow-lg',
-                     ],
+                     classNames: ['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1'],
                   },
-                  contentWrapperClassNames: ['featured-media-card-content-wrapper', 'p-6'],
                   containers: [
                      {
                         id: 'flixio-media-card-title',
-                        classNames: ['featured-media-card-title', 'mb-2'],
+                        classNames: ['flex-1', 'flex', 'flex-col', 'm-12', 'space-y-6', 'items-center', 'justify-center'],
                         subContainers: [
                            {
                               id: 'flixio-title',
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.HEADING,
-                              text: 'Flixio - Movie Review Platform',
+                              text: 'Flixio',
                               level: 3,
-                              classNames: ['mb-2'],
                            },
                            {
                               id: 'flixio-description',
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.PARAGRAPH,
-                              text: 'An engaging platform for movie enthusiasts to read and write reviews, rate films, and discover new releases.',
-                              classNames: ['mb-4'],
+                              text: 'Flixio is a cross-platform streaming application designed for mobile, tablet, and desktop, allowing users to discover, search, and enjoy movies and series seamlessly across devices.',
+                              classNames: ['text-neutral-400'],
                            },
                            {
                               id: 'flixio-cta-button',
                               subContainerType: SUB_CONTAINER_TYPES.BLOCK,
                               type: BLOCK_TYPES.BUTTON,
-                              variant: 'primary',
+                              variant: BUTTON_VARIANTS.SECONDARY,
                               href: {
                                  id: 'flixio-website-link',
-                                 url: 'https://flixio-movie-reviews.com',
+                                 url: '/projects/flixio',
                                  label: 'View Project',
-                                 target: LINK_TARGETS.BLANK,
                               },
-                              classNames: ['rounded-lg'],
+                              classNames: ['rounded-lg', 'w-fit'],
                            },
                         ],
                      },
                   ],
-                  classNames: ['featured-media-card', 'mt-8'],
                }
             ],
          },

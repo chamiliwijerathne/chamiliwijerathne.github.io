@@ -1,4 +1,4 @@
-import type { BaseBlock } from '../block.types';
+import type { BaseBlock, Block } from '../block.types';
 import { BlockRenderer } from './BlockRenderer';
 import { SUB_CONTAINER_TYPES } from './container.constants';
 import type { BaseContainer } from './container.types';
@@ -20,7 +20,7 @@ export const ContainerRenderer = (props: BaseContainer) => {
       <div id={id} className={containerClasses} style={style}>
          {(subContainers || []).map(({ subContainerType, ...rest }) => {
             if (subContainerType === SUB_CONTAINER_TYPES.BLOCK) {
-               return <BlockRenderer key={rest.id} block={rest as BaseBlock} />;
+               return <BlockRenderer key={rest.id} block={rest as Block} />;
             }
 
             if (subContainerType === SUB_CONTAINER_TYPES.CONTAINER) {
