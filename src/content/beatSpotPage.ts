@@ -1,24 +1,24 @@
 import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, SUB_CONTAINER_TYPES } from '../components/blocks';
 import { IMAGE_LOADING } from '../components/blocks/image';
 import { SECTION_TYPES } from '../components/sections';
-import type { SunRayPageType } from '../types';
+import type { BeatSpotPageType } from '../types';
 import { IMAGES } from './constants/images';
 
-export const sunRayPage: SunRayPageType = {
+export const beatSpotPage: BeatSpotPageType = {
    heroSection: {
-      id: 'sunray-hero',
+      id: 'beatspot-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['sunray-hero-section'],
+      classNames: ['beatspot-hero-section'],
       img: {
-         id: 'sunray-hero-image',
-         alt: 'SunRay Hero Image',
-         src: IMAGES.HERO_SUN_RAY_PAGE as ImageMetadata,
-         classNames: ['sunray-hero-image', 'w-full', 'h-full', 'object-cover'],
+         id: 'beatspot-hero-image',
+         alt: 'BeatSpot Hero Image',
+         src: IMAGES.HERO_BEAT_SPOT_PAGE as ImageMetadata,
+         classNames: ['beatspot-hero-image', 'w-full', 'h-full', 'object-cover'],
          loading: IMAGE_LOADING.EAGER,
       },
    },
    overviewSection: {
-      id: 'sunray-overview',
+      id: 'beatspot-overview',
       classNames: [],
       containers: [ // TODO: Refactor to add blocks directly to section
          {
@@ -37,14 +37,14 @@ export const sunRayPage: SunRayPageType = {
                   id: 'overview-block-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'SunRays is a self-initiated project focused on designing a modern, responsive e-commerce website for a sunglass store. The website is designed for both desktop and mobile, ensuring a seamless shopping experience across devices.',
+                  text: 'BeatSpot is a self-initiated mobile app designed for hip-hop fans to discover, explore, and book tickets for upcoming hip-hop events based on their location and interests. This project focuses on designing a smooth, user-centered experience that simplifies event discovery and booking.',
                },
             ],
          },
       ],
    },
    caseSection: {
-      id: 'sunray-case',
+      id: 'beatspot-case',
       classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
       containers: [
          {
@@ -63,7 +63,7 @@ export const sunRayPage: SunRayPageType = {
                   id: 'problem-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'Online sunglasses stores often overwhelm users with too many options, unclear navigation, and complicated checkout processes. SunRays aims to simplify browsing and purchasing, helping users find their ideal sunglasses effortlessly.',
+                  text: 'Hip-hop fans often struggle to discover relevant local events because event information is scattered across multiple platforms, and current apps mix different music genres, making search and discovery time-consuming and confusing.',
                },
             ]
          },
@@ -83,7 +83,7 @@ export const sunRayPage: SunRayPageType = {
                   id: 'goal-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'The goal of SunRays was to design a modern, responsive e-commerce website that offers a seamless and enjoyable shopping experience, allowing users to easily browse, explore, and purchase sunglasses across desktop and mobile devices.',
+                  text: 'To create a seamless, user-friendly app that allows hip-hop fans to easily find, explore, and book tickets for events nearby, while providing a clear and engaging event discovery experience.',
                },
             ]
          },
@@ -103,14 +103,14 @@ export const sunRayPage: SunRayPageType = {
                   id: 'role-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'This was an individual project where I planned and led each step of the design thinking process, applying my skills in responsive web design.',
+                  text: 'This was an individual project where I planned and led each step of the design thinking process, applying my skills in mobile app UX/UI design.',
                },
             ]
          }
       ],
    },
    responsibilitiesSection: {
-      id: 'sunray-responsibilities',
+      id: 'beatspot-responsibilities',
       classNames: [],
       containers: [ // TODO: Refactor to add blocks directly to section
          {
@@ -132,11 +132,11 @@ export const sunRayPage: SunRayPageType = {
                   listType: LIST_TYPES.UNORDERED,
                   markerStyle: LIST_MARKERS.DISC,
                   items: [
-                     'Researched common e-commerce UX patterns to identify best practices',
-                     'Designed user flows for product discovery, detail views, cart, and checkout',
-                     'Built wireframes, interactive prototypes, and polished high-fidelity mockups in Figma',
-                     'Applied responsive design principles to ensure consistency across mobile and desktop',
-                     'Packaged project into a case study for portfolio presentation',
+                     'Conducted user research and competitor research on event discovery and music apps to identify gaps and opportunities.',
+                     'Created user personas and journey maps to define user needs and guide design decisions.',
+                     'Designed low-fidelity wireframes, interactive prototypes, and high-fidelity UIs using Figma.',
+                     'Iteratively refined navigation and booking flows following usability best practices.',
+                     'Documented the full process in a case study format for portfolio presentation.',
                   ],
                },
             ],
@@ -144,3 +144,4 @@ export const sunRayPage: SunRayPageType = {
       ],
    },
 };
+

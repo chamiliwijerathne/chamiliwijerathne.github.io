@@ -5,7 +5,11 @@ import type { SECTION_TYPES } from './section.constants';
 export interface BaseSection<Block = BaseBlock> {
    id: string;
    type: SectionType;
-   backgroundImage?: string;
+   backgroundImage?: {
+      url: string;
+      classNames?: string[];
+      style?: CSSProperties;
+   };
    classNames?: string[];
    style?: CSSProperties;
    containers?: BaseContainer[];

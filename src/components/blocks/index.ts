@@ -5,3 +5,5 @@ export * from './heading';
 export * from './paragraph';
 export * from './container';
 export * from './link';
+export * from './list';
+export * from './image';

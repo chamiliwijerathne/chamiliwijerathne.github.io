@@ -11,18 +11,20 @@ export const Button = (props: Props) => {
    const classes = [baseClass, variantClass, alignClass, extraClasses].filter(Boolean).join(' ');
 
    return (
-      <button className={classes} style={style} id={id}>
+      <>
          {href ? (
             <a
                href={href.url}
-               target={href.targetBlank ? '_blank' : '_self'}
-               rel={href.targetBlank ? 'noopener noreferrer' : href.rel}
+               target={href.target ? '_blank' : '_self'}
+               rel={href.rel ? 'noopener noreferrer' : href.rel}
             >
-               {href.label}
+               <button className={classes} style={style} id={id}>{href.label}</button>
             </a>
          ) : (
-            <span>{label}</span>
+            <button id={id} className={classes} style={style}>
+               {label}
+            </button>
          )}
-      </button>
-   );
+      </>
+   )
 };

@@ -4,6 +4,7 @@ import { Button, } from '../button';
 import { Heading } from '../heading';
 import { Paragraph } from '../paragraph';
 import { MediaCard } from '../mediaCard';
+import { List } from '../list';
 
 type Props = {
    block: Block;
@@ -19,6 +20,8 @@ export const BlockRenderer = ({ block }: Props) => {
          return <Button {...block} />;
       case BLOCK_TYPES.MEDIA_CARD:
          return <MediaCard {...block} />;
+      case BLOCK_TYPES.LIST:
+         return <List {...block} />;
       default:
          return null;
    }

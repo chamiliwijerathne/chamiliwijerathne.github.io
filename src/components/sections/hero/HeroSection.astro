@@ -10,17 +10,20 @@ const extraClasses = Array.isArray(classNames) ? classNames.join(' ') : classNam
 const classes = [baseClass, extraClasses].filter(Boolean).join(' ');
 
 const imgClasses = [
-   'hero-img',
    Array.isArray(img?.classNames) ? img.classNames.join(' ') : img?.classNames || '',
 ]
    .filter(Boolean)
    .join(' ');
+
+const backgroundImageUrl = backgroundImage?.url || '';
+const backgroundImageClasses = Array.isArray(backgroundImage?.classNames) ? backgroundImage.classNames.join(' ') : backgroundImage?.classNames || '';
+const backgroundImageStyle = backgroundImage?.style || {};
 ---
 
 <section class={classes} id={id} style={style}>
    {
       backgroundImage && (
-         <div class="background-image" style={`background-image: url(${backgroundImage});`} />
+         <div class={backgroundImageClasses} style={`background-image: url(${backgroundImageUrl});`} style={backgroundImageStyle} />
       )
    }
    {img && <Image src={img.src as ImageMetadata} alt={img.alt || ''} class={imgClasses} style={img.style} loading={img.loading as any || 'eager'} />}

@@ -1,26 +1,27 @@
 import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, SUB_CONTAINER_TYPES } from '../components/blocks';
 import { IMAGE_LOADING } from '../components/blocks/image';
 import { SECTION_TYPES } from '../components/sections';
-import type { SunRayPageType } from '../types';
+import type { FlixioPageType } from '../types';
 import { IMAGES } from './constants/images';
 
-export const sunRayPage: SunRayPageType = {
+export const flixioPage: FlixioPageType = {
    heroSection: {
-      id: 'sunray-hero',
+      id: 'flixio-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['sunray-hero-section'],
+      classNames: ['flixio-hero-section'],
       img: {
-         id: 'sunray-hero-image',
-         alt: 'SunRay Hero Image',
-         src: IMAGES.HERO_SUN_RAY_PAGE as ImageMetadata,
-         classNames: ['sunray-hero-image', 'w-full', 'h-full', 'object-cover'],
+         id: 'flixio-hero-image',
+         alt: 'Flixio Hero Image',
+         src: IMAGES.HERO_FLIXIO_PAGE as ImageMetadata,
+         classNames: ['flixio-hero-image', 'w-full', 'h-full', 'object-cover'],
          loading: IMAGE_LOADING.EAGER,
       },
    },
    overviewSection: {
-      id: 'sunray-overview',
+      id: 'flixio-overview',
       classNames: [],
-      containers: [ // TODO: Refactor to add blocks directly to section
+      containers: [
+         // TODO: Refactor to add blocks directly to section
          {
             id: 'overview-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
@@ -37,14 +38,14 @@ export const sunRayPage: SunRayPageType = {
                   id: 'overview-block-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'SunRays is a self-initiated project focused on designing a modern, responsive e-commerce website for a sunglass store. The website is designed for both desktop and mobile, ensuring a seamless shopping experience across devices.',
+                  text: 'Flixio is a self-initiated cross-platform streaming app designed for mobile, tablet, and desktop. It delivers a seamless and cinematic viewing experience through responsive layouts, intuitive navigation, and a visually engaging interface across all devices.',
                },
             ],
          },
       ],
    },
    caseSection: {
-      id: 'sunray-case',
+      id: 'flixio-case',
       classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
       containers: [
          {
@@ -63,9 +64,9 @@ export const sunRayPage: SunRayPageType = {
                   id: 'problem-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'Online sunglasses stores often overwhelm users with too many options, unclear navigation, and complicated checkout processes. SunRays aims to simplify browsing and purchasing, helping users find their ideal sunglasses effortlessly.',
+                  text: 'Users often experience cluttered layouts, inconsistent cross-device experiences, and complex navigation flows on streaming platforms, making content discovery and viewing less enjoyable.',
                },
-            ]
+            ],
          },
          {
             id: 'goal-container',
@@ -83,9 +84,9 @@ export const sunRayPage: SunRayPageType = {
                   id: 'goal-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'The goal of SunRays was to design a modern, responsive e-commerce website that offers a seamless and enjoyable shopping experience, allowing users to easily browse, explore, and purchase sunglasses across desktop and mobile devices.',
+                  text: 'To design a responsive streaming experience that allows users to effortlessly discover, search, and watch content across devices.',
                },
-            ]
+            ],
          },
          {
             id: 'role-container',
@@ -103,16 +104,17 @@ export const sunRayPage: SunRayPageType = {
                   id: 'role-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'This was an individual project where I planned and led each step of the design thinking process, applying my skills in responsive web design.',
+                  text: 'This was an individual project where I led every stage of the design thinking process — from research and wireframing to responsive design and interaction prototyping.',
                },
-            ]
-         }
+            ],
+         },
       ],
    },
    responsibilitiesSection: {
-      id: 'sunray-responsibilities',
+      id: 'flixio-responsibilities',
       classNames: [],
-      containers: [ // TODO: Refactor to add blocks directly to section
+      containers: [
+         // TODO: Refactor to add blocks directly to section
          {
             id: 'responsibilities-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
@@ -132,11 +134,11 @@ export const sunRayPage: SunRayPageType = {
                   listType: LIST_TYPES.UNORDERED,
                   markerStyle: LIST_MARKERS.DISC,
                   items: [
-                     'Researched common e-commerce UX patterns to identify best practices',
-                     'Designed user flows for product discovery, detail views, cart, and checkout',
-                     'Built wireframes, interactive prototypes, and polished high-fidelity mockups in Figma',
-                     'Applied responsive design principles to ensure consistency across mobile and desktop',
-                     'Packaged project into a case study for portfolio presentation',
+                     'Conducted competitor research to identify common streaming app patterns',
+                     'Created user personas and mapped user flows',
+                     'Designed wireframes, interactive prototypes, and high-fidelity UIs using Figma.',
+                     'Defined and refined navigation for a consistent cross-device experience',
+                     'Documented the design process with clear visuals for portfolio presentation',
                   ],
                },
             ],

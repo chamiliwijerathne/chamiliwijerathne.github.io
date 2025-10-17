@@ -1,26 +1,27 @@
 import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, SUB_CONTAINER_TYPES } from '../components/blocks';
 import { IMAGE_LOADING } from '../components/blocks/image';
 import { SECTION_TYPES } from '../components/sections';
-import type { SunRayPageType } from '../types';
+import type { LoginFlowPageType } from '../types';
 import { IMAGES } from './constants/images';
 
-export const sunRayPage: SunRayPageType = {
+export const loginFlowPage: LoginFlowPageType = {
    heroSection: {
-      id: 'sunray-hero',
+      id: 'loginFlow-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['sunray-hero-section'],
+      classNames: ['loginFlow-hero-section'],
       img: {
-         id: 'sunray-hero-image',
-         alt: 'SunRay Hero Image',
-         src: IMAGES.HERO_SUN_RAY_PAGE as ImageMetadata,
-         classNames: ['sunray-hero-image', 'w-full', 'h-full', 'object-cover'],
+         id: 'loginFlow-hero-image',
+         alt: 'LoginFlow Hero Image',
+         src: IMAGES.HERO_LOGIN_FLOW_PAGE as ImageMetadata,
+         classNames: ['loginFlow-hero-image', 'w-full', 'h-full', 'object-cover'],
          loading: IMAGE_LOADING.EAGER,
       },
    },
    overviewSection: {
-      id: 'sunray-overview',
+      id: 'loginFlow-overview',
       classNames: [],
-      containers: [ // TODO: Refactor to add blocks directly to section
+      containers: [
+         // TODO: Refactor to add blocks directly to section
          {
             id: 'overview-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
@@ -37,14 +38,14 @@ export const sunRayPage: SunRayPageType = {
                   id: 'overview-block-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'SunRays is a self-initiated project focused on designing a modern, responsive e-commerce website for a sunglass store. The website is designed for both desktop and mobile, ensuring a seamless shopping experience across devices.',
+                  text: 'This project is an extension of BeatSpot – Hip Hop Event Finder App, created to showcase the complete login flow. It focuses on designing a cohesive entry experience for users, covering onboarding, sign-in, sign-up, and password recovery.',
                },
             ],
          },
       ],
    },
    caseSection: {
-      id: 'sunray-case',
+      id: 'loginFlow-case',
       classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
       containers: [
          {
@@ -63,9 +64,9 @@ export const sunRayPage: SunRayPageType = {
                   id: 'problem-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'Online sunglasses stores often overwhelm users with too many options, unclear navigation, and complicated checkout processes. SunRays aims to simplify browsing and purchasing, helping users find their ideal sunglasses effortlessly.',
+                  text: 'Insert one to two sentences about the problem(s) you were trying to solve.',
                },
-            ]
+            ],
          },
          {
             id: 'goal-container',
@@ -83,9 +84,9 @@ export const sunRayPage: SunRayPageType = {
                   id: 'goal-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'The goal of SunRays was to design a modern, responsive e-commerce website that offers a seamless and enjoyable shopping experience, allowing users to easily browse, explore, and purchase sunglasses across desktop and mobile devices.',
+                  text: 'To design a simple, accessible, and efficient login flow that builds user trust and ensures a smooth first-time experience.',
                },
-            ]
+            ],
          },
          {
             id: 'role-container',
@@ -103,16 +104,17 @@ export const sunRayPage: SunRayPageType = {
                   id: 'role-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
                   subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'This was an individual project where I planned and led each step of the design thinking process, applying my skills in responsive web design.',
+                  text: 'As the sole designer, I planned and executed the entire process — from mapping user flow and wireframing to creating high-fidelity mockups.',
                },
-            ]
-         }
+            ],
+         },
       ],
    },
    responsibilitiesSection: {
-      id: 'sunray-responsibilities',
+      id: 'loginFlow-responsibilities',
       classNames: [],
-      containers: [ // TODO: Refactor to add blocks directly to section
+      containers: [
+         // TODO: Refactor to add blocks directly to section
          {
             id: 'responsibilities-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
@@ -132,11 +134,10 @@ export const sunRayPage: SunRayPageType = {
                   listType: LIST_TYPES.UNORDERED,
                   markerStyle: LIST_MARKERS.DISC,
                   items: [
-                     'Researched common e-commerce UX patterns to identify best practices',
-                     'Designed user flows for product discovery, detail views, cart, and checkout',
-                     'Built wireframes, interactive prototypes, and polished high-fidelity mockups in Figma',
-                     'Applied responsive design principles to ensure consistency across mobile and desktop',
-                     'Packaged project into a case study for portfolio presentation',
+                     'Researched common login and authentication patterns across popular apps.',
+                     'Defined the complete user flow for onboarding, sign-in, sign-up, and password recovery.',
+                     'Designed low-fidelity wireframes and interactive high-fidelity prototypes in Figma.',
+                     'Ensured visual and functional consistency with the main BeatSpot app design system.'
                   ],
                },
             ],

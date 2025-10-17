@@ -1,0 +1,19 @@
+---
+import { HeroSection, SectionTemplate, type HeroSectionType } from "../../components/sections";
+import { sunRayPage } from "../../content/sunRayPage";
+import { Layout } from "../../layouts";
+
+
+
+const { heroSection, overviewSection, caseSection, responsibilitiesSection } = sunRayPage;
+---
+
+<Layout>
+   <main slot="main" class="sunray" id="sunray">
+      <HeroSection {...heroSection  as HeroSectionType} />
+
+     <SectionTemplate {...overviewSection} />
+     <SectionTemplate {...caseSection} />
+     <SectionTemplate {...responsibilitiesSection} />
+   </main>
+</Layout>

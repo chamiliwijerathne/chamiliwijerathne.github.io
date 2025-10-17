@@ -1,0 +1,19 @@
+---
+import { HeroSection, SectionTemplate, type HeroSectionType } from "../../components/sections";
+import { flixioPage } from "../../content/flixioPage";
+import { Layout } from "../../layouts";
+
+
+
+const { heroSection, overviewSection, caseSection, responsibilitiesSection } = flixioPage;
+---
+
+<Layout>
+   <main slot="main" class="flixio" id="flixio">
+      <HeroSection {...heroSection  as HeroSectionType} />
+
+     <SectionTemplate {...overviewSection} />
+     <SectionTemplate {...caseSection} />
+     <SectionTemplate {...responsibilitiesSection} />
+   </main>
+</Layout>

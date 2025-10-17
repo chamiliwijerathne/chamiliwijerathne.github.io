@@ -1,10 +1,10 @@
 import {
    BLOCK_TYPES,
    BUTTON_VARIANTS,
-   LINK_TARGETS,
    SUB_CONTAINER_TYPES,
 } from '../components/blocks';
-import { SECTION_TYPES } from '../components/sections/section.constants';
+import { IMAGE_LOADING } from '../components/blocks/image';
+import { SECTION_TYPES } from '../components/sections';
 import type { ProjectsPageType } from '../types';
 import { IMAGES } from './constants/images';
 
@@ -17,8 +17,8 @@ export const projectsPage: ProjectsPageType = {
          id: 'projects-hero-image',
          src: IMAGES.HERO_PROJECTS_PAGE as ImageMetadata,
          alt: 'Hero',
-         classNames: ['projects-hero-img'],
-         loading: 'eager',
+         classNames: ['hero-img', 'projects-hero-img'],
+         loading: IMAGE_LOADING.EAGER,
       },
    },
    projectsSection: {
@@ -37,11 +37,76 @@ export const projectsPage: ProjectsPageType = {
                   classNames: ['projects-heading', 'mb-4'],
                },
                {
-                  id: 'sun-ray-media-card',
+                  id: 'beat-spot-media-card',
                   classNames: [
                      'flex',
                      'flex-col',
                      'md:flex-row',
+                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
+                     'rounded-3xl',
+                     'overflow-hidden',
+                     'md:h-[524px]',
+                     'bg-neutral-900',
+                  ],
+                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  type: BLOCK_TYPES.MEDIA_CARD,
+                  image: {
+                     id: 'beat-spot-media-card-image',
+                     type: BLOCK_TYPES.IMAGE,
+                     src: '/src/assets/images/beatSpotMediaCard.png',
+                     alt: 'Beat Spot Media Card',
+                     position: 'right',
+                     classNames: ['w-full', 'h-full', 'object-cover'],
+                     wrapperClassNames: ['flex-1', 'order-2'],
+                  },
+                  containers: [
+                     {
+                        id: 'beat-spot-media-card-title',
+                        classNames: ['flex-1', 'order-1', 'flex', 'items-center'],
+                        subContainers: [
+                           {
+                              id: 'beat-spot-title-container',
+                              classNames: ['m-12', 'space-y-6'],
+                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
+                              subContainers: [
+                                 {
+                                    id: 'beat-spot-title',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.HEADING,
+                                    text: 'BeatSpot',
+                                    level: 3,
+                                 },
+                                 {
+                                    id: 'beat-spot-description',
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.PARAGRAPH,
+                                    text: 'BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals.',
+                                    classNames: ['text-neutral-400'],
+                                 },
+                                 {
+                                    id: 'beat-spot-cta-button',
+                                    classNames: ['rounded-full', 'w-fit'],
+                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                                    type: BLOCK_TYPES.BUTTON,
+                                    variant: BUTTON_VARIANTS.SECONDARY,
+                                    href: {
+                                       id: 'beat-spot-link',
+                                       url: '/projects/beatspot',
+                                       label: 'View Project',
+                                    },
+                                 },
+                              ],
+                           },
+                        ],
+                     },
+                  ],
+               },
+               {
+                  id: 'sun-ray-media-card',
+                  classNames: [
+                     'flex',
+                     'flex-col',
+                     'md:flex-row-reverse',
                      'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
                      'rounded-3xl',
                      'overflow-hidden',
@@ -92,71 +157,6 @@ export const projectsPage: ProjectsPageType = {
                                     href: {
                                        id: 'sun-ray-link',
                                        url: '/projects/sunray',
-                                       label: 'View Project',
-                                    },
-                                 },
-                              ],
-                           },
-                        ],
-                     },
-                  ],
-               },
-               {
-                  id: 'beat-spot-media-card',
-                  classNames: [
-                     'flex',
-                     'flex-col',
-                     'md:flex-row-reverse',
-                     'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
-                     'rounded-3xl',
-                     'overflow-hidden',
-                     'md:h-[524px]',
-                     'bg-neutral-900',
-                  ],
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.MEDIA_CARD,
-                  image: {
-                     id: 'beat-spot-media-card-image',
-                     type: BLOCK_TYPES.IMAGE,
-                     src: '/src/assets/images/beatSpotMediaCard.png',
-                     alt: 'Beat Spot Media Card',
-                     position: 'left',
-                     classNames: ['w-full', 'h-full', 'object-cover'],
-                     wrapperClassNames: ['flex-1', 'order-2'],
-                  },
-                  containers: [
-                     {
-                        id: 'beat-spot-media-card-title',
-                        classNames: ['flex-1', 'order-1', 'flex', 'items-center'],
-                        subContainers: [
-                           {
-                              id: 'beat-spot-title-container',
-                              classNames: ['m-12', 'space-y-6'],
-                              subContainerType: SUB_CONTAINER_TYPES.CONTAINER,
-                              subContainers: [
-                                 {
-                                    id: 'beat-spot-title',
-                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                                    type: BLOCK_TYPES.HEADING,
-                                    text: 'BeatSpot',
-                                    level: 3,
-                                 },
-                                 {
-                                    id: 'beat-spot-description',
-                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                                    type: BLOCK_TYPES.PARAGRAPH,
-                                    text: 'BeatSpot is a mobile app that makes it easy for users to discover, explore, and book nearby hip hop concerts, battles, and festivals.',
-                                    classNames: ['text-neutral-400'],
-                                 },
-                                 {
-                                    id: 'beat-spot-cta-button',
-                                    classNames: ['rounded-full', 'w-fit'],
-                                    subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                                    type: BLOCK_TYPES.BUTTON,
-                                    variant: BUTTON_VARIANTS.SECONDARY,
-                                    href: {
-                                       id: 'beat-spot-link',
-                                       url: '/projects/beatspot',
                                        label: 'View Project',
                                     },
                                  },
