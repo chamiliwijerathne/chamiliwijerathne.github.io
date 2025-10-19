@@ -1,4 +1,4 @@
-import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, SUB_CONTAINER_TYPES } from '../components/blocks';
+import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, ELEMENT_TYPES } from '../components/blocks';
 import { IMAGE_LOADING } from '../components/blocks/image';
 import { SECTION_TYPES } from '../components/sections';
 import type { BeatSpotPageType } from '../types';
@@ -19,41 +19,36 @@ export const beatSpotPage: BeatSpotPageType = {
    },
    overviewSection: {
       id: 'beatspot-overview',
-      classNames: [],
-      containers: [ // TODO: Refactor to add blocks directly to section
+      classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
+      elements: [
          {
-            id: 'overview-container',
-            classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
-            subContainers: [
-               {
-                  id: 'overview-block-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.HEADING,
-                  text: 'Overview',
-                  level: 4,
-                  classNames: ['mb-6'],
-               },
-               {
-                  id: 'overview-block-paragraph',
-                  type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'BeatSpot is a self-initiated mobile app designed for hip-hop fans to discover, explore, and book tickets for upcoming hip-hop events based on their location and interests. This project focuses on designing a smooth, user-centered experience that simplifies event discovery and booking.',
-               },
-            ],
+            id: 'overview-block-heading',
+            elementType: ELEMENT_TYPES.BLOCK,
+            type: BLOCK_TYPES.HEADING,
+            text: 'Overview',
+            level: 4,
+            classNames: ['mb-6'],
+         },
+         {
+            id: 'overview-block-paragraph',
+            type: BLOCK_TYPES.PARAGRAPH,
+            elementType: ELEMENT_TYPES.BLOCK,
+            text: 'BeatSpot is a self-initiated mobile app designed for hip-hop fans to discover, explore, and book tickets for upcoming hip-hop events based on their location and interests. This project focuses on designing a smooth, user-centered experience that simplifies event discovery and booking.',
          },
       ],
    },
    caseSection: {
       id: 'beatspot-case',
       classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
-      containers: [
+      elements: [
          {
             id: 'problem-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'problem-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Problem',
                   level: 4,
@@ -62,18 +57,19 @@ export const beatSpotPage: BeatSpotPageType = {
                {
                   id: 'problem-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'Hip-hop fans often struggle to discover relevant local events because event information is scattered across multiple platforms, and current apps mix different music genres, making search and discovery time-consuming and confusing.',
                },
-            ]
+            ],
          },
          {
             id: 'goal-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'goal-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Goal',
                   level: 4,
@@ -82,18 +78,19 @@ export const beatSpotPage: BeatSpotPageType = {
                {
                   id: 'goal-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'To create a seamless, user-friendly app that allows hip-hop fans to easily find, explore, and book tickets for events nearby, while providing a clear and engaging event discovery experience.',
                },
-            ]
+            ],
          },
          {
             id: 'role-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'role-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'My Role',
                   level: 4,
@@ -102,24 +99,26 @@ export const beatSpotPage: BeatSpotPageType = {
                {
                   id: 'role-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'This was an individual project where I planned and led each step of the design thinking process, applying my skills in mobile app UX/UI design.',
                },
-            ]
-         }
+            ],
+         },
       ],
    },
    responsibilitiesSection: {
       id: 'beatspot-responsibilities',
       classNames: [],
-      containers: [ // TODO: Refactor to add blocks directly to section
+      elements: [
+         // TODO: Refactor to add blocks directly to section
          {
             id: 'responsibilities-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'responsibilities-block-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Responsibilities',
                   level: 4,
@@ -127,8 +126,9 @@ export const beatSpotPage: BeatSpotPageType = {
                },
                {
                   id: 'responsibilities-list',
+                  classNames: ['pl-6'],
                   type: BLOCK_TYPES.LIST,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   listType: LIST_TYPES.UNORDERED,
                   markerStyle: LIST_MARKERS.DISC,
                   items: [
@@ -143,5 +143,227 @@ export const beatSpotPage: BeatSpotPageType = {
          },
       ],
    },
+   designThinkingSection: {
+      id: 'beatspot-design-thinking',
+      classNames: [],
+      elements: [
+         {
+            id: 'design-thinking-container',
+            classNames: ['flex', 'flex-col', 'items-center', 'pb-20', 'w-[1120px]', 'mx-auto'],
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
+               {
+                  id: 'design-thinking-heading',
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  type: BLOCK_TYPES.HEADING,
+                  text: 'Design Thinking Process',
+                  level: 4,
+                  classNames: ['mb-6'],
+               },
+               {
+                  id: 'design-thinking-paragraph',
+                  classNames: ['text-center', 'max-w-[895px]'],
+                  type: BLOCK_TYPES.PARAGRAPH,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  text: 'Design Thinking is a human-centered, iterative problem-solving approach that helps designers deeply understand users, define the right problems, and create innovative, user-focused solutions.',
+               },
+               {
+                  id: 'design-thinking-image',
+                  type: BLOCK_TYPES.IMAGE,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  src: '/src/assets/images/beatSpotDesignThinking.svg',
+                  alt: 'Design Thinking Process Image',
+                  classNames: ['mt-8', 'w-full', 'h-auto', 'object-cover'],
+               },
+            ],
+         },
+      ],
+   },
+   userResearchSection: {
+      id: 'beatspot-user-research',
+      classNames: [],
+      elements: [
+         {
+            id: 'user-research-container',
+            classNames: ['flex', 'flex-col', 'pb-10', 'space-y-6', 'w-[792px]', 'mx-auto'],
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
+               {
+                  id: 'user-research-heading',
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  type: BLOCK_TYPES.HEADING,
+                  text: 'User Research',
+                  level: 4,
+                  classNames: ['mb-6'],
+               },
+               {
+                  id: 'user-research-paragraph-1',
+                  type: BLOCK_TYPES.PARAGRAPH,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  text: 'To understand the needs, frustrations, and preferences of hip-hop fans, I conducted foundational research for BeatSpot. The goal was to gain insights into how users currently discover, explore, and book hip-hop events, and to identify pain points in existing event discovery platforms.',
+               },
+               {
+                  id: 'user-research-paragraph-2',
+                  type: BLOCK_TYPES.PARAGRAPH,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  text: 'I focused on qualitative research methods, combining:',
+               },
+               {
+                  id: 'user-research-methods-list',
+                  classNames: ['pl-6'],
+                  type: BLOCK_TYPES.LIST,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  listType: LIST_TYPES.UNORDERED,
+                  markerStyle: LIST_MARKERS.DISC,
+                  items: [
+                     'Secondary research: analyzing competitor apps, websites, reviews, and reports to study existing solutions.',
+                     'Informal interviews: speaking with potential users to better understand their behaviors and expectations.',
+                  ],
+               },
+               {
+                  id: 'user-research-paragraph-3',
+                  type: BLOCK_TYPES.PARAGRAPH,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  text: 'These insights directly informed the design decisions and helped shape a user-centered experience.',
+               },
+            ],
+         },
+      ],
+   },
+   userResearchKeyInsightsSection: {
+      id: 'beatspot-user-research-key-insights',
+      classNames: [],
+      elements: [
+         {
+            id: 'user-research-key-insights-container',
+            classNames: ['flex', 'flex-col', 'space-y-6', 'w-[1120px]', 'mx-auto', 'pb-20'],
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
+               {
+                  id: 'user-research-key-insights-heading',
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  type: BLOCK_TYPES.HEADING,
+                  text: 'User Research -  Key Insights',
+                  level: 4,
+                  classNames: ['mb-6'],
+               },
+               {
+                  id: 'user-research-key-insights-cards',
+                  classNames: [],
+                  elementType: ELEMENT_TYPES.CONTAINER,
+                  elements: [
+                     {
+                        id: 'user-research-key-insights-scattered-event-container',
+                        classNames: ['p-6', 'bg-neutral-900'],
+                        elementType: ELEMENT_TYPES.CONTAINER,
+                        elements: [
+                           {
+                              id: 'user-research-key-insights-scattered-event-image',
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              type: BLOCK_TYPES.IMAGE,
+                              src: '/src/assets/images/beatSpotNumberOne.svg',
+                              alt: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph-bold',
+                              classNames: ['font-bold', 'text-xl'],
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph',
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Users struggle to find hip-hop events because listings are scattered across multiple platforms. (social media, ticketing websites, forums)',
+                           },
+                        ],
+                     },
+                     {
+                        id: 'user-research-key-insights-scattered-event-container',
+                        classNames: ['p-6', 'bg-neutral-900'],
+                        elementType: ELEMENT_TYPES.CONTAINER,
+                        elements: [
+                           {
+                              id: 'user-research-key-insights-scattered-event-image',
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              type: BLOCK_TYPES.IMAGE,
+                              src: '/src/assets/images/beatSpotNumberOne.svg',
+                              alt: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph-bold',
+                              classNames: ['font-bold', 'text-xl'],
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph',
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Users struggle to find hip-hop events because listings are scattered across multiple platforms. (social media, ticketing websites, forums)',
+                           },
+                        ],
+                     },
+                     {
+                        id: 'user-research-key-insights-scattered-event-container',
+                        classNames: ['p-6', 'bg-neutral-900'],
+                        elementType: ELEMENT_TYPES.CONTAINER,
+                        elements: [
+                           {
+                              id: 'user-research-key-insights-scattered-event-image',
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              type: BLOCK_TYPES.IMAGE,
+                              src: '/src/assets/images/beatSpotNumberOne.svg',
+                              alt: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph-bold',
+                              classNames: ['font-bold', 'text-xl'],
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph',
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Users struggle to find hip-hop events because listings are scattered across multiple platforms. (social media, ticketing websites, forums)',
+                           },
+                        ],
+                     },
+                     {
+                        id: 'user-research-key-insights-scattered-event-container',
+                        classNames: ['p-6', 'bg-neutral-900'],
+                        elementType: ELEMENT_TYPES.CONTAINER,
+                        elements: [
+                           {
+                              id: 'user-research-key-insights-scattered-event-image',
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              type: BLOCK_TYPES.IMAGE,
+                              src: '/src/assets/images/beatSpotNumberOne.svg',
+                              alt: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph-bold',
+                              classNames: ['font-bold', 'text-xl'],
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Scattered Event Information',
+                           },
+                           {
+                              id: 'user-research-key-insights-scattered-event-paragraph',
+                              type: BLOCK_TYPES.PARAGRAPH,
+                              elementType: ELEMENT_TYPES.BLOCK,
+                              text: 'Users struggle to find hip-hop events because listings are scattered across multiple platforms. (social media, ticketing websites, forums)',
+                           },
+                        ],
+                     },
+                  ],
+               },
+            ],
+         },
+      ],
+   },
 };
-

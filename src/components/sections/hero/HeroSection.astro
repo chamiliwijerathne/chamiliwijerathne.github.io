@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import { ContainerRenderer } from '../../blocks';
+import { ContainerRenderer, IMAGE_LOADING } from '../../blocks';
 import type { HeroSectionType as Props } from './hero.types';
 
-const { id, backgroundImage, classNames, img, style, containers } = Astro.props;
+const { id, backgroundImage, classNames, img, style, elements } = Astro.props as Props;
 
 const baseClass = 'hero-section';
 const extraClasses = Array.isArray(classNames) ? classNames.join(' ') : classNames || '';
@@ -26,6 +26,6 @@ const backgroundImageStyle = backgroundImage?.style || {};
          <div class={backgroundImageClasses} style={`background-image: url(${backgroundImageUrl});`} style={backgroundImageStyle} />
       )
    }
-   {img && <Image src={img.src as ImageMetadata} alt={img.alt || ''} class={imgClasses} style={img.style} loading={img.loading as any || 'eager'} />}
-   {containers && containers.map((container) => <ContainerRenderer {...container} />)}
+   {img && <Image src={img.src as ImageMetadata} alt={img.alt || ''} class={imgClasses} style={img.style} loading={img.loading as any || IMAGE_LOADING.EAGER} />}
+   {elements && elements.map((element) => <ContainerRenderer {...element} />)}
 </section>

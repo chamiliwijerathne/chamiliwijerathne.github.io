@@ -1,7 +1,7 @@
 import type { BLOCK_TYPES } from '../block.constants';
 import type { BaseBlock } from '../block.types';
 // import type { ButtonVariant } from '../button';
-import type { BaseContainer } from '../container';
+import type { BaseElement } from '../container';
 import type { ImageBlock } from '../image';
 
 // interface Props {
@@ -36,5 +36,5 @@ import type { ImageBlock } from '../image';
 export interface MediaCardBlockType extends BaseBlock {
    type: typeof BLOCK_TYPES.MEDIA_CARD;
    image: ImageBlock & { position: 'left' | 'right', wrapperClassNames?: string[]; src?: string; };
-   containers?: BaseContainer[];
+   containers?: BaseElement[];
 }

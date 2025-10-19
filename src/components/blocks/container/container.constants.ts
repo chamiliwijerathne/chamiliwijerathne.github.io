@@ -11,7 +11,7 @@ export const ALIGNS = {
    BETWEEN: 'between',
 } as const;
 
-export const SUB_CONTAINER_TYPES = {
+export const ELEMENT_TYPES = {
    BLOCK: 'block',
    CONTAINER: 'container',
 } as const;

@@ -1,10 +1,10 @@
 import type { CSSProperties } from "react";
-import type { BaseContainer } from "../../blocks";
+import type { ElementItem } from "../../blocks";
 import type { BaseSection } from "../section.types";
 
-export interface SectionTemplateType<T> extends Omit<BaseSection<T>, 'type'> {
+export interface SectionTemplateType extends Omit<BaseSection, 'type'> {
    id: string;
    classNames?: string[];
    style?: CSSProperties;
-   containers?: BaseContainer[]
+   elements?: ElementItem[]
 }

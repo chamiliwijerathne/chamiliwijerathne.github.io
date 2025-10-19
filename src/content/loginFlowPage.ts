@@ -1,4 +1,4 @@
-import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, SUB_CONTAINER_TYPES } from '../components/blocks';
+import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, ELEMENT_TYPES } from '../components/blocks';
 import { IMAGE_LOADING } from '../components/blocks/image';
 import { SECTION_TYPES } from '../components/sections';
 import type { LoginFlowPageType } from '../types';
@@ -19,42 +19,36 @@ export const loginFlowPage: LoginFlowPageType = {
    },
    overviewSection: {
       id: 'loginFlow-overview',
-      classNames: [],
-      containers: [
-         // TODO: Refactor to add blocks directly to section
+      classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
+      elements: [
          {
-            id: 'overview-container',
-            classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
-            subContainers: [
-               {
-                  id: 'overview-block-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.HEADING,
-                  text: 'Overview',
-                  level: 4,
-                  classNames: ['mb-6'],
-               },
-               {
-                  id: 'overview-block-paragraph',
-                  type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  text: 'This project is an extension of BeatSpot – Hip Hop Event Finder App, created to showcase the complete login flow. It focuses on designing a cohesive entry experience for users, covering onboarding, sign-in, sign-up, and password recovery.',
-               },
-            ],
+            id: 'overview-block-heading',
+            elementType: ELEMENT_TYPES.BLOCK,
+            type: BLOCK_TYPES.HEADING,
+            text: 'Overview',
+            level: 4,
+            classNames: ['mb-6'],
+         },
+         {
+            id: 'overview-block-paragraph',
+            type: BLOCK_TYPES.PARAGRAPH,
+            elementType: ELEMENT_TYPES.BLOCK,
+            text: 'This project is an extension of BeatSpot – Hip Hop Event Finder App, created to showcase the complete login flow. It focuses on designing a cohesive entry experience for users, covering onboarding, sign-in, sign-up, and password recovery.',
          },
       ],
    },
    caseSection: {
       id: 'loginFlow-case',
       classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
-      containers: [
+      elements: [
          {
             id: 'problem-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'problem-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Problem',
                   level: 4,
@@ -63,7 +57,7 @@ export const loginFlowPage: LoginFlowPageType = {
                {
                   id: 'problem-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'Insert one to two sentences about the problem(s) you were trying to solve.',
                },
             ],
@@ -71,10 +65,11 @@ export const loginFlowPage: LoginFlowPageType = {
          {
             id: 'goal-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'goal-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Goal',
                   level: 4,
@@ -83,7 +78,7 @@ export const loginFlowPage: LoginFlowPageType = {
                {
                   id: 'goal-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'To design a simple, accessible, and efficient login flow that builds user trust and ensures a smooth first-time experience.',
                },
             ],
@@ -91,10 +86,11 @@ export const loginFlowPage: LoginFlowPageType = {
          {
             id: 'role-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'role-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'My Role',
                   level: 4,
@@ -103,7 +99,7 @@ export const loginFlowPage: LoginFlowPageType = {
                {
                   id: 'role-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'As the sole designer, I planned and executed the entire process — from mapping user flow and wireframing to creating high-fidelity mockups.',
                },
             ],
@@ -112,34 +108,27 @@ export const loginFlowPage: LoginFlowPageType = {
    },
    responsibilitiesSection: {
       id: 'loginFlow-responsibilities',
-      classNames: [],
-      containers: [
-         // TODO: Refactor to add blocks directly to section
+      classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
+      elements: [
          {
-            id: 'responsibilities-container',
-            classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
-            subContainers: [
-               {
-                  id: 'responsibilities-block-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  type: BLOCK_TYPES.HEADING,
-                  text: 'Responsibilities',
-                  level: 4,
-                  classNames: ['mb-6'],
-               },
-               {
-                  id: 'responsibilities-list',
-                  type: BLOCK_TYPES.LIST,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
-                  listType: LIST_TYPES.UNORDERED,
-                  markerStyle: LIST_MARKERS.DISC,
-                  items: [
-                     'Researched common login and authentication patterns across popular apps.',
-                     'Defined the complete user flow for onboarding, sign-in, sign-up, and password recovery.',
-                     'Designed low-fidelity wireframes and interactive high-fidelity prototypes in Figma.',
-                     'Ensured visual and functional consistency with the main BeatSpot app design system.'
-                  ],
-               },
+            id: 'responsibilities-block-heading',
+            elementType: ELEMENT_TYPES.BLOCK,
+            type: BLOCK_TYPES.HEADING,
+            text: 'Responsibilities',
+            level: 4,
+            classNames: ['mb-6'],
+         },
+         {
+            id: 'responsibilities-list',
+            type: BLOCK_TYPES.LIST,
+            elementType: ELEMENT_TYPES.BLOCK,
+            listType: LIST_TYPES.UNORDERED,
+            markerStyle: LIST_MARKERS.DISC,
+            items: [
+               'Researched common login and authentication patterns across popular apps.',
+               'Defined the complete user flow for onboarding, sign-in, sign-up, and password recovery.',
+               'Designed low-fidelity wireframes and interactive high-fidelity prototypes in Figma.',
+               'Ensured visual and functional consistency with the main BeatSpot app design system.',
             ],
          },
       ],

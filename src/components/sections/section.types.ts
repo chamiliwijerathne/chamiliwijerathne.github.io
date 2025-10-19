@@ -1,8 +1,8 @@
 import type { CSSProperties } from 'react';
-import type { BaseBlock, BaseContainer } from '../blocks';
+import type { ElementItem } from '../blocks';
 import type { SECTION_TYPES } from './section.constants';
 
-export interface BaseSection<Block = BaseBlock> {
+export interface BaseSection {
    id: string;
    type: SectionType;
    backgroundImage?: {
@@ -12,7 +12,7 @@ export interface BaseSection<Block = BaseBlock> {
    };
    classNames?: string[];
    style?: CSSProperties;
-   containers?: BaseContainer[];
+   elements?: ElementItem[];
 }
 
 export type SectionType = (typeof SECTION_TYPES)[keyof typeof SECTION_TYPES];

@@ -1,4 +1,4 @@
-import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, SUB_CONTAINER_TYPES } from '../components/blocks';
+import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, ELEMENT_TYPES } from '../components/blocks';
 import { IMAGE_LOADING } from '../components/blocks/image';
 import { SECTION_TYPES } from '../components/sections';
 import type { FlixioPageType } from '../types';
@@ -20,15 +20,16 @@ export const flixioPage: FlixioPageType = {
    overviewSection: {
       id: 'flixio-overview',
       classNames: [],
-      containers: [
+      elements: [
          // TODO: Refactor to add blocks directly to section
          {
             id: 'overview-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'overview-block-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Overview',
                   level: 4,
@@ -37,7 +38,7 @@ export const flixioPage: FlixioPageType = {
                {
                   id: 'overview-block-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'Flixio is a self-initiated cross-platform streaming app designed for mobile, tablet, and desktop. It delivers a seamless and cinematic viewing experience through responsive layouts, intuitive navigation, and a visually engaging interface across all devices.',
                },
             ],
@@ -47,14 +48,15 @@ export const flixioPage: FlixioPageType = {
    caseSection: {
       id: 'flixio-case',
       classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
-      containers: [
+      elements: [
          {
             id: 'problem-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'problem-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Problem',
                   level: 4,
@@ -63,7 +65,7 @@ export const flixioPage: FlixioPageType = {
                {
                   id: 'problem-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'Users often experience cluttered layouts, inconsistent cross-device experiences, and complex navigation flows on streaming platforms, making content discovery and viewing less enjoyable.',
                },
             ],
@@ -71,10 +73,11 @@ export const flixioPage: FlixioPageType = {
          {
             id: 'goal-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'goal-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Goal',
                   level: 4,
@@ -83,7 +86,7 @@ export const flixioPage: FlixioPageType = {
                {
                   id: 'goal-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'To design a responsive streaming experience that allows users to effortlessly discover, search, and watch content across devices.',
                },
             ],
@@ -91,10 +94,11 @@ export const flixioPage: FlixioPageType = {
          {
             id: 'role-container',
             classNames: ['p-6', 'bg-neutral-900'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'role-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'My Role',
                   level: 4,
@@ -103,7 +107,7 @@ export const flixioPage: FlixioPageType = {
                {
                   id: 'role-paragraph',
                   type: BLOCK_TYPES.PARAGRAPH,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   text: 'This was an individual project where I led every stage of the design thinking process — from research and wireframing to responsive design and interaction prototyping.',
                },
             ],
@@ -113,15 +117,16 @@ export const flixioPage: FlixioPageType = {
    responsibilitiesSection: {
       id: 'flixio-responsibilities',
       classNames: [],
-      containers: [
+      elements: [
          // TODO: Refactor to add blocks directly to section
          {
             id: 'responsibilities-container',
             classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
-            subContainers: [
+            elementType: ELEMENT_TYPES.CONTAINER,
+            elements: [
                {
                   id: 'responsibilities-block-heading',
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   type: BLOCK_TYPES.HEADING,
                   text: 'Responsibilities',
                   level: 4,
@@ -130,7 +135,7 @@ export const flixioPage: FlixioPageType = {
                {
                   id: 'responsibilities-list',
                   type: BLOCK_TYPES.LIST,
-                  subContainerType: SUB_CONTAINER_TYPES.BLOCK,
+                  elementType: ELEMENT_TYPES.BLOCK,
                   listType: LIST_TYPES.UNORDERED,
                   markerStyle: LIST_MARKERS.DISC,
                   items: [

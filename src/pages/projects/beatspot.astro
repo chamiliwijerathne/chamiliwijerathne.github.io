@@ -1,19 +1,26 @@
 ---
-import { HeroSection, SectionTemplate, type HeroSectionType } from "../../components/sections";
-import { beatSpotPage } from "../../content/beatSpotPage";
-import { Layout } from "../../layouts";
+import { HeroSection, SectionTemplate, type HeroSectionType } from '../../components/sections';
+import { beatSpotPage } from '../../content/beatSpotPage';
+import { Layout } from '../../layouts';
 
-
-
-const { heroSection, overviewSection, caseSection, responsibilitiesSection } = beatSpotPage;
+const {
+   heroSection,
+   overviewSection,
+   caseSection,
+   responsibilitiesSection,
+   designThinkingSection,
+   userResearchSection,
+} = beatSpotPage;
 ---
 
 <Layout>
    <main slot="main" class="beatspot" id="beatspot">
-      <HeroSection {...heroSection  as HeroSectionType} />
+      <HeroSection {...heroSection as HeroSectionType} />
 
-     <SectionTemplate {...overviewSection} />
-     <SectionTemplate {...caseSection} />
-     <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...overviewSection} />
+      <SectionTemplate {...caseSection} />
+      <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...designThinkingSection} />
+      <SectionTemplate {...userResearchSection} />
    </main>
 </Layout>

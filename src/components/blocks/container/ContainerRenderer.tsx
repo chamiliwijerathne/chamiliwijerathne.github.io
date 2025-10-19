@@ -1,34 +1,36 @@
-import type { BaseBlock, Block } from '../block.types';
+import type { Block } from '../block.types';
 import { BlockRenderer } from './BlockRenderer';
-import { SUB_CONTAINER_TYPES } from './container.constants';
-import type { BaseContainer } from './container.types';
+import { ELEMENT_TYPES } from './container.constants';
+import type { BaseElement, ElementItem } from './container.types';
 
-export const ContainerRenderer = (props: BaseContainer) => {
-   const { id, align, classNames, subContainers, gap, layout, style } = props;
+export const ContainerRenderer = (props: ElementItem) => {
+   const { elementType, ...rest } = props;
 
-   const containerClasses = [
-      'container',
-      layout ? `container-layout-${layout}` : '',
-      align ? `container-align-${align}` : '',
-      gap ? `container-gap-${gap}` : '',
-      Array.isArray(classNames) ? classNames.join(' ') : classNames || '',
-   ]
-      .filter(Boolean)
-      .join(' ');
+   if (elementType === ELEMENT_TYPES.BLOCK) {
+      return <BlockRenderer key={rest.id} block={rest as Block} />;
+   }
 
-   return (
-      <div id={id} className={containerClasses} style={style}>
-         {(subContainers || []).map(({ subContainerType, ...rest }) => {
-            if (subContainerType === SUB_CONTAINER_TYPES.BLOCK) {
-               return <BlockRenderer key={rest.id} block={rest as Block} />;
-            }
+   if (elementType === ELEMENT_TYPES.CONTAINER) {
+      const { id, elements, layout, align, gap, classNames, style } = rest as BaseElement;
 
-            if (subContainerType === SUB_CONTAINER_TYPES.CONTAINER) {
-               return <ContainerRenderer key={rest.id} {...(rest as BaseContainer)} />;
-            }
+      const containerClasses = [
+         'container',
+         layout ? `container-layout-${layout}` : '',
+         align ? `container-align-${align}` : '',
+         gap ? `container-gap-${gap}` : '',
+         Array.isArray(classNames) ? classNames.join(' ') : classNames || '',
+      ]
+         .filter(Boolean)
+         .join(' ');
 
-            return null;
-         })}
-      </div>
-   );
+      return (
+         <div id={id} className={containerClasses} style={style}>
+            {(elements || []).map((element) => (
+               <ContainerRenderer key={element.id} {...element} />
+            ))}
+         </div>
+      );
+   }
+
+   return null;
 };

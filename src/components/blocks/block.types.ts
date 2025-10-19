@@ -5,6 +5,7 @@ import type { HeadingBlock } from './heading';
 import type { ParagraphBlock } from './paragraph';
 import type { MediaCardBlockType } from './mediaCard';
 import type { ListBlock } from './list';
+import type { ImageBlockProps } from './image';
 
 export type TextAlignment = (typeof TEXT_ALIGNMENTS)[keyof typeof TEXT_ALIGNMENTS];
 
@@ -18,4 +19,4 @@ export interface BaseBlock {
 
 export type BlockType = (typeof BLOCK_TYPES)[keyof typeof BLOCK_TYPES];
 
-export type Block = ButtonBlock | HeadingBlock | ParagraphBlock | MediaCardBlockType | ListBlock;
+export type Block = ButtonBlock | HeadingBlock | ParagraphBlock | MediaCardBlockType | ListBlock | ImageBlockProps;

@@ -1,5 +1,9 @@
-.home {
+/* .home {
    @apply px-30;
+} */
+
+.home {
+   @apply px-4 sm:px-8 md:px-16 lg:px-24 xl:px-30;
 }
 
 /* Hero Section */
