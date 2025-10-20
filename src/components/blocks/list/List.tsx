@@ -17,7 +17,7 @@ export const List = (props: Props) => {
 
    return (
       <ListTag id={id} className={classes} style={style}>
-         {items.map((item, index) => (
+         {items.map((item, index) => (// TODO: item can be more complex than string (e.g., { id, text }, JSX.Element, etc.)
             <li key={index}>{item}</li>
          ))}
       </ListTag>
