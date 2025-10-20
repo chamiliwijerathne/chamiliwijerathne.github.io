@@ -10,6 +10,7 @@ import instagramIcon from './../../assets/icons/instagram.svg';
 import linkedinIcon from './../../assets/icons/linkedin.svg';
 import gmailIcon from './../../assets/icons/gmail.svg';
 import sunRayMediaCard from './../../assets/images/sunRayMediaCard.png';
+import flixioAppPreview from './../../assets/images/flixioPreview.svg';
 
 
 export const IMAGES = {
@@ -25,4 +26,6 @@ export const IMAGES = {
    LINKEDIN_ICON: linkedinIcon,
    GMAIL_ICON: gmailIcon,
    SUN_RAY_MEDIA_CARD: sunRayMediaCard,
+
+   FLIXIO_APP_PREVIEW: flixioAppPreview
 } as const;

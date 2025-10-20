@@ -1,19 +1,54 @@
 ---
-import { HeroSection, SectionTemplate, type HeroSectionType } from "../../components/sections";
-import { flixioPage } from "../../content/flixioPage";
-import { Layout } from "../../layouts";
+import { HeroSection, SectionTemplate, type HeroSectionType } from '../../components/sections';
+import { flixioPage } from '../../content/flixioPage';
+import { Layout } from '../../layouts';
 
-
-
-const { heroSection, overviewSection, caseSection, responsibilitiesSection } = flixioPage;
+const {
+   heroSection,
+   overviewSection,
+   caseSection,
+   responsibilitiesSection,
+   appPreviewSection,
+   userResearchSection,
+   userResearchKeyInsightsSection,
+   personaSection,
+   problemStatementSection,
+   userFlowSection,
+   paperWireframesSection,
+   digitalWireframesSection,
+   lowFidelityPrototypeSection,
+   finalDesignSection,
+   finalDesignMobileImagesSection,
+   finalDesignTabImagesSection,
+   finalDesignDesktopImagesSection,
+   highFidelityPrototypeSection,
+   finalOutcomeAndLearningsSection,
+   closingReflectionSection,
+} = flixioPage;
 ---
 
 <Layout>
    <main slot="main" class="flixio" id="flixio">
-      <HeroSection {...heroSection  as HeroSectionType} />
+      <HeroSection {...heroSection as HeroSectionType} />
 
-     <SectionTemplate {...overviewSection} />
-     <SectionTemplate {...caseSection} />
-     <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...overviewSection} />
+      <SectionTemplate {...caseSection} />
+      <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...appPreviewSection} />
+      <SectionTemplate {...userResearchSection} />
+      <SectionTemplate {...userResearchKeyInsightsSection} />
+      <SectionTemplate {...personaSection} />
+      <SectionTemplate {...problemStatementSection} />
+      <SectionTemplate {...userFlowSection} />
+      <SectionTemplate {...paperWireframesSection} />
+      <SectionTemplate {...digitalWireframesSection} />
+      <SectionTemplate {...lowFidelityPrototypeSection} />
+      <SectionTemplate {...finalDesignSection} />
+      <SectionTemplate {...finalDesignMobileImagesSection} />
+      <SectionTemplate {...finalDesignTabImagesSection} />
+      <SectionTemplate {...finalDesignDesktopImagesSection} />
+      <SectionTemplate {...highFidelityPrototypeSection} />
+      <SectionTemplate {...finalOutcomeAndLearningsSection} />
+      <SectionTemplate {...closingReflectionSection} />
    </main>
 </Layout>

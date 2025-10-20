@@ -22,6 +22,7 @@ export const beatSpotPage: BeatSpotPageType = {
       classNames: [
          'flex',
          'flex-col',
+         'space-y-6',
          'pt-20',
          'pb-20',
          'mx-auto',
@@ -38,7 +39,6 @@ export const beatSpotPage: BeatSpotPageType = {
             type: BLOCK_TYPES.HEADING,
             text: 'Overview',
             level: 4,
-            classNames: ['mb-6'],
          },
          {
             id: 'overview-block-paragraph',
@@ -133,6 +133,7 @@ export const beatSpotPage: BeatSpotPageType = {
       classNames: [
          'flex',
          'flex-col',
+         'space-y-6',
          'pt-20',
          'pb-20',
          'w-full',
@@ -149,7 +150,6 @@ export const beatSpotPage: BeatSpotPageType = {
             type: BLOCK_TYPES.HEADING,
             text: 'Responsibilities',
             level: 4,
-            classNames: ['mb-6'],
          },
          {
             id: 'responsibilities-list',
