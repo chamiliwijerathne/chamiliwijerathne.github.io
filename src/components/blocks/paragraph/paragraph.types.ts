@@ -1,5 +1,4 @@
-import type { BLOCK_TYPES } from '../block.constants';
-import type { BaseBlock } from '../block.types';
+import type { BLOCK_TYPES, BaseBlock } from '../../utils';
 
 export interface ParagraphBlock extends BaseBlock {
    type: typeof BLOCK_TYPES.PARAGRAPH;

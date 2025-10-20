@@ -1,5 +1,4 @@
-import type { BLOCK_TYPES } from '../block.constants';
-import type { BaseBlock } from '../block.types';
+import type { BLOCK_TYPES, BaseBlock } from '../../utils';
 import type { LIST_MARKERS, LIST_TYPES } from './list.constants';
 
 export type ListType = (typeof LIST_TYPES)[keyof typeof LIST_TYPES];

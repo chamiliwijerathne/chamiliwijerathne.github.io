@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import type { ALIGNS, LAYOUTS } from './container.constants';
 import { ELEMENT_TYPES } from './container.constants';
-import type { Block } from '../block.types';
+import type { Block } from '../blockRenderer';
 
 export type LayoutType = (typeof LAYOUTS)[keyof typeof LAYOUTS];
 export type AlignType = (typeof ALIGNS)[keyof typeof ALIGNS];

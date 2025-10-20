@@ -1,19 +1,34 @@
 ---
-import { HeroSection, SectionTemplate, type HeroSectionType } from "../../components/sections";
-import { loginFlowPage } from "../../content/loginFlowPage";
-import { Layout } from "../../layouts";
+import { HeroSection, SectionTemplate, type HeroSectionType } from '../../components/sections';
+import { loginFlowPage } from '../../content/loginFlowPage';
+import { Layout } from '../../layouts';
 
-
-
-const { heroSection, overviewSection, caseSection, responsibilitiesSection } = loginFlowPage;
+const {
+   heroSection,
+   overviewSection,
+   caseSection,
+   responsibilitiesSection,
+   userFlowSection,
+   paperWireframesSection,
+   digitalWireframesSection,
+   highFidelityDesignSection,
+   finalOutcomeAndLearningsSection,
+   closingReflectionSection,
+} = loginFlowPage;
 ---
 
 <Layout>
    <main slot="main" class="loginFlow" id="loginFlow">
-      <HeroSection {...heroSection  as HeroSectionType} />
+      <HeroSection {...heroSection as HeroSectionType} />
 
-     <SectionTemplate {...overviewSection} />
-     <SectionTemplate {...caseSection} />
-     <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...overviewSection} />
+      <SectionTemplate {...caseSection} />
+      <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...userFlowSection} />
+      <SectionTemplate {...paperWireframesSection} />
+      <SectionTemplate {...digitalWireframesSection} />
+      <SectionTemplate {...highFidelityDesignSection} />
+      <SectionTemplate {...finalOutcomeAndLearningsSection} />
+      <SectionTemplate {...closingReflectionSection} />
    </main>
 </Layout>

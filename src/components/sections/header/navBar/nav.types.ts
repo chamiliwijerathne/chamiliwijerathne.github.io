@@ -1,7 +1,6 @@
 import type { CSSProperties } from "react";
 import { NAV_ITEM_TYPES } from "./nav.constants";
-import type { ButtonVariant, LinkBlock } from "../../../blocks";
-import type { ImageBlock } from "../../../blocks/image";
+import type { ButtonVariant, LinkBlock, ImageBlock } from "../../../blocks";
 
 export type NavItemType = (typeof NAV_ITEM_TYPES)[keyof typeof NAV_ITEM_TYPES];
 

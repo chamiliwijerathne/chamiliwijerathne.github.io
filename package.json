@@ -14,7 +14,9 @@
       "astro": "^5.13.11",
       "react": "^19.1.1",
       "react-dom": "^19.1.1",
-      "react-router-dom": "^7.9.4"
+      "react-router-dom": "^7.9.4",
+      "remark-parse": "^11.0.0",
+      "unified": "^11.0.5"
    },
    "devDependencies": {
       "@types/js-yaml": "^4.0.9",

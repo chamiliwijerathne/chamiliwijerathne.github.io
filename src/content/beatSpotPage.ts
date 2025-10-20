@@ -1,6 +1,6 @@
-import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, ELEMENT_TYPES } from '../components/blocks';
-import { IMAGE_LOADING } from '../components/blocks/image';
+import { LIST_MARKERS, LIST_TYPES, IMAGE_LOADING } from '../components/blocks';
 import { SECTION_TYPES } from '../components/sections';
+import { BLOCK_TYPES, ELEMENT_TYPES } from '../components/utils';
 import type { BeatSpotPageType } from '../types';
 import { IMAGES } from './constants/images';
 

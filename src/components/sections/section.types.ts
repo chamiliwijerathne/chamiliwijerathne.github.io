@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
-import type { ElementItem } from '../blocks';
 import type { SECTION_TYPES } from './section.constants';
+import type { ElementItem } from '../utils';
 
 export interface BaseSection {
    id: string;

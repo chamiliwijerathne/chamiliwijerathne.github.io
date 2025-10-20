@@ -1,5 +1,6 @@
-import { ContainerRenderer } from '../container';
-import type { MediaCardBlockType as Props } from './mediaCard.types';
+
+import { ContainerRenderer } from '../../utils';
+import type { MediaCardBlock as Props } from './mediaCard.types';
 
 export const MediaCard = (props: Props) => {
    const { id, image, classNames, containers, style } = props;

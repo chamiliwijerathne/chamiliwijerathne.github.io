@@ -1,6 +1,6 @@
-import { BLOCK_TYPES, BUTTON_VARIANTS, ELEMENT_TYPES } from '../components/blocks';
-import { IMAGE_LOADING } from '../components/blocks/image';
+import { IMAGE_LOADING, BUTTON_VARIANTS } from '../components/blocks';
 import { SECTION_TYPES } from '../components/sections';
+import { BLOCK_TYPES, ELEMENT_TYPES } from '../components/utils';
 import type { ProjectsPageType } from '../types';
 import { IMAGES } from './constants/images';
 

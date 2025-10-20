@@ -1,5 +1,5 @@
-import type { Block } from '../block.types';
-import { BlockRenderer } from './BlockRenderer';
+import type { Block } from '..';
+import { BlockRenderer } from '../blockRenderer';
 import { ELEMENT_TYPES } from './container.constants';
 import type { BaseElement, ElementItem } from './container.types';
 

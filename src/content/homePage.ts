@@ -1,5 +1,6 @@
-import { BLOCK_TYPES, BUTTON_VARIANTS, LINK_TARGETS, ELEMENT_TYPES } from '../components/blocks';
-import { SECTION_TYPES } from '../components/sections/section.constants';
+import { BUTTON_VARIANTS, LINK_TARGETS } from '../components/blocks';
+import { BLOCK_TYPES, ELEMENT_TYPES } from '../components/utils';
+import { SECTION_TYPES } from '../components/sections';
 import type { HomePageType } from '../types';
 import { IMAGES } from './constants/images';
 

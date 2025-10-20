@@ -1,6 +1,6 @@
-import { BLOCK_TYPES, LIST_MARKERS, LIST_TYPES, ELEMENT_TYPES } from '../components/blocks';
-import { IMAGE_LOADING } from '../components/blocks/image';
+import { IMAGE_LOADING, LIST_MARKERS, LIST_TYPES } from '../components/blocks';
 import { SECTION_TYPES } from '../components/sections';
+import { BLOCK_TYPES, ELEMENT_TYPES } from '../components/utils';
 import type { SunRayPageType } from '../types';
 import { IMAGES } from './constants/images';
 

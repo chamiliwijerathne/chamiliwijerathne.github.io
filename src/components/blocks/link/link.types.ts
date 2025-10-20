@@ -1,5 +1,4 @@
-import type { BLOCK_TYPES } from '../block.constants';
-import type { BaseBlock } from '../block.types';
+import type { BLOCK_TYPES, BaseBlock } from '../../utils';
 import type { LINK_RELS, LINK_TARGETS, LINK_VARIANTS } from './link.constants';
 
 export interface LinkBlock extends BaseBlock {

@@ -1,6 +1,5 @@
 import type { CSSProperties } from 'react';
-import type { BLOCK_TYPES } from '../block.constants';
-import type { BaseBlock } from '../block.types';
+import type { BLOCK_TYPES, BaseBlock } from '../../utils';
 import type { IMAGE_LOADING, IMAGE_SHAPES } from './image.constants';
 
 export type ImageShape = (typeof IMAGE_SHAPES)[keyof typeof IMAGE_SHAPES];

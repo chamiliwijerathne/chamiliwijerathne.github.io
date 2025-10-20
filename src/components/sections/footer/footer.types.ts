@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import type { NavItem } from "../header";
-import type { ImageBlock } from "../../blocks/image";
+import type { ImageBlock } from "../../blocks";
 
 export interface FooterType {
    id: string;

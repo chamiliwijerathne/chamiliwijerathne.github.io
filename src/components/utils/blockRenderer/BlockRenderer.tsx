@@ -1,11 +1,6 @@
-import { BLOCK_TYPES } from '../block.constants';
-import type { Block } from '../block.types';
-import { Button, } from '../button';
-import { Heading } from '../heading';
-import { Paragraph } from '../paragraph';
-import { MediaCard } from '../mediaCard';
-import { List } from '../list';
-import { Image } from '../image';
+import { BLOCK_TYPES } from './block.constants';
+import type { Block } from './block.types';
+import { Button, Heading, List, MediaCard, Paragraph, Image } from '../../blocks';
 
 type Props = {
    block: Block;

@@ -1,5 +1,4 @@
-import type { BLOCK_TYPES } from '../block.constants';
-import type { BaseBlock } from '../block.types';
+import type { BLOCK_TYPES, BaseBlock } from '../../utils';
 import type { HEADING_LEVELS } from './heading.constants';
 
 export type HeadingLevel = (typeof HEADING_LEVELS)[keyof typeof HEADING_LEVELS];

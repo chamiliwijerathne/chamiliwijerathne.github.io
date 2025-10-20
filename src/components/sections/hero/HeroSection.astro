@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import { ContainerRenderer, IMAGE_LOADING } from '../../blocks';
+import { IMAGE_LOADING } from '../../blocks';
 import type { HeroSectionType as Props } from './hero.types';
+import { ContainerRenderer } from '../../utils';
 
 const { id, backgroundImage, classNames, img, style, elements } = Astro.props as Props;
 
