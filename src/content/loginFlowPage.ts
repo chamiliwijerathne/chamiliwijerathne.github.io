@@ -521,6 +521,14 @@ export const loginFlowPage: LoginFlowPageType = {
             ],
             elements: [
                {
+                  id: 'high-fidelity-design-image-5',
+                  type: BLOCK_TYPES.IMAGE,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  src: '/src/assets/images/loginFlowFinalDesign5.svg',
+                  alt: 'Login Flow Final Design Image 5',
+                  classNames: ['w-full', 'h-auto', 'object-cover'],
+               },
+               {
                   id: 'high-fidelity-design-image-9',
                   type: BLOCK_TYPES.IMAGE,
                   elementType: ELEMENT_TYPES.BLOCK,
@@ -602,6 +610,14 @@ export const loginFlowPage: LoginFlowPageType = {
                   elementType: ELEMENT_TYPES.BLOCK,
                   src: '/src/assets/images/loginFlowFinalDesign13.svg',
                   alt: 'Login Flow Final Design Image 13',
+                  classNames: ['w-full', 'h-auto', 'object-cover'],
+               },
+               {
+                  id: 'high-fidelity-design-image-14',
+                  type: BLOCK_TYPES.IMAGE,
+                  elementType: ELEMENT_TYPES.BLOCK,
+                  src: '/src/assets/images/loginFlowFinalDesign15.svg',
+                  alt: 'Login Flow Final Design Image 15',
                   classNames: ['w-full', 'h-auto', 'object-cover'],
                },
                {
