@@ -14,7 +14,6 @@ export const ContainerRenderer = (props: ElementItem) => {
       const { id, elements, layout, align, gap, classNames, style } = rest as BaseElement;
 
       const containerClasses = [
-         'container',
          layout ? `container-layout-${layout}` : '',
          align ? `container-align-${align}` : '',
          gap ? `container-gap-${gap}` : '',

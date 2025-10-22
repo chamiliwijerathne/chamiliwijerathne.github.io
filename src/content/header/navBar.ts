@@ -18,10 +18,9 @@ export const navBar: NavBarType = {
          },
          img: {
             id: "logo-image",
+            classNames: ["w-[79px]"],
             src: IMAGES.LOGO,
             alt: "Logo",
-            height: 30,
-            width: 30,
          },
       }
    ],

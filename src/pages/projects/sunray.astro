@@ -1,19 +1,60 @@
 ---
-import { HeroSection, SectionTemplate, type HeroSectionType } from "../../components/sections";
-import { sunRayPage } from "../../content/sunRayPage";
-import { Layout } from "../../layouts";
+import { HeroSection, SectionTemplate, type HeroSectionType } from '../../components/sections';
+import { sunRayPage } from '../../content/sunRayPage';
+import { Layout } from '../../layouts';
 
-
-
-const { heroSection, overviewSection, caseSection, responsibilitiesSection } = sunRayPage;
+const {
+   heroSection,
+   overviewSection,
+   caseSection,
+   responsibilitiesSection,
+   siteMapSection,
+   paperWireframesSection,
+   digitalWireframesSection,
+   lowFidelityPrototypeSection,
+   usabilityStudySection,
+   usabilityStudyFindingsSection,
+   designRefinementsSection,
+   finalDesignSection,
+   finalDesignMobileImagesSection,
+   finalDesignDesktopImagesSection,
+   highFidelityPrototypeSection,
+   finalOutcomeAndLearningsSection,
+   closingReflectionSection,
+   appPreviewSection,
+   userResearchSection,
+   userResearchKeyInsightsSection,
+   personaSection,
+   problemStatementSection,
+   userFlowSection,
+} = sunRayPage;
 ---
 
 <Layout>
    <main slot="main" class="sunray" id="sunray">
-      <HeroSection {...heroSection  as HeroSectionType} />
+      <HeroSection {...heroSection as HeroSectionType} />
 
-     <SectionTemplate {...overviewSection} />
-     <SectionTemplate {...caseSection} />
-     <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...overviewSection} />
+      <SectionTemplate {...caseSection} />
+      <SectionTemplate {...responsibilitiesSection} />
+      <SectionTemplate {...appPreviewSection} />
+      <SectionTemplate {...userResearchSection} />
+      <SectionTemplate {...userResearchKeyInsightsSection} />
+      <SectionTemplate {...personaSection} />
+      <SectionTemplate {...problemStatementSection} />
+      <SectionTemplate {...userFlowSection} />
+      <SectionTemplate {...siteMapSection} />
+      <SectionTemplate {...paperWireframesSection} />
+      <SectionTemplate {...digitalWireframesSection} />
+      <SectionTemplate {...lowFidelityPrototypeSection} />
+      <SectionTemplate {...usabilityStudySection} />
+      <SectionTemplate {...usabilityStudyFindingsSection} />
+      <SectionTemplate {...designRefinementsSection} />
+      <SectionTemplate {...finalDesignSection} />
+      <SectionTemplate {...finalDesignMobileImagesSection} />
+      <SectionTemplate {...finalDesignDesktopImagesSection} />
+      <SectionTemplate {...highFidelityPrototypeSection} />
+      <SectionTemplate {...finalOutcomeAndLearningsSection} />
+      <SectionTemplate {...closingReflectionSection} />
    </main>
 </Layout>

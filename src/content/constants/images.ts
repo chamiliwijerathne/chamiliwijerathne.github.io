@@ -1,4 +1,4 @@
-import logo from './../../assets/images/logo.png';
+import logo from './../../assets/images/logo.svg';
 import footerImage from './../../assets/images/footerBgImage.svg';
 import heroHomePage from './../../assets/images/heroHomePage.svg';
 import heroProjectsPage from './../../assets/images/heroProjectsPage.svg';
