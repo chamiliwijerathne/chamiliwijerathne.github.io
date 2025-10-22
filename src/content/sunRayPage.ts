@@ -19,7 +19,18 @@ export const sunRayPage: SunRayPageType = {
    },
    overviewSection: {
       id: 'sunray-overview',
-      classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
+      classNames: [
+         'flex',
+         'flex-col',
+         'space-y-6',
+         'mt-20',
+         'mx-auto',
+         'w-full',
+         'max-w-screen-md',
+         'px-4',
+         'sm:px-8',
+         'md:px-12',
+      ],
       elements: [
          {
             id: 'overview-block-heading',
@@ -27,7 +38,6 @@ export const sunRayPage: SunRayPageType = {
             type: BLOCK_TYPES.HEADING,
             text: 'Overview',
             level: 4,
-            classNames: ['mb-6'],
          },
          {
             id: 'overview-block-paragraph',
@@ -39,7 +49,19 @@ export const sunRayPage: SunRayPageType = {
    },
    caseSection: {
       id: 'sunray-case',
-      classNames: ['w-[1200px]', 'mx-auto', 'flex', 'flex-row', 'gap-6'],
+      classNames: [
+         'w-full',
+         'max-w-screen-xl',
+         'mx-auto',
+         'mt-20',
+         'px-4',
+         'sm:px-8',
+         'md:px-12',
+         'gap-6',
+         'grid',
+         'grid-cols-1',
+         'md:grid-cols-3',
+      ],
       elements: [
          {
             id: 'problem-container',
@@ -108,7 +130,18 @@ export const sunRayPage: SunRayPageType = {
    },
    responsibilitiesSection: {
       id: 'sunray-responsibilities',
-      classNames: ['flex', 'flex-col', 'pt-20', 'pb-20', 'w-[792px]', 'mx-auto'],
+      classNames: [
+         'flex',
+         'flex-col',
+         'space-y-6',
+         'mt-20',
+         'w-full',
+         'max-w-screen-md',
+         'px-4',
+         'sm:px-8',
+         'md:px-12',
+         'mx-auto',
+      ],
       elements: [
          {
             id: 'responsibilities-block-heading',
@@ -116,10 +149,10 @@ export const sunRayPage: SunRayPageType = {
             type: BLOCK_TYPES.HEADING,
             text: 'Responsibilities',
             level: 4,
-            classNames: ['mb-6'],
          },
          {
             id: 'responsibilities-list',
+            classNames: ['pl-6'],
             type: BLOCK_TYPES.LIST,
             elementType: ELEMENT_TYPES.BLOCK,
             listType: LIST_TYPES.UNORDERED,
@@ -136,7 +169,7 @@ export const sunRayPage: SunRayPageType = {
    },
    appPreviewSection: {
       id: 'sunray-app-preview',
-      classNames: ['w-full', 'mx-auto'],
+      classNames: ['w-full', 'mx-auto', 'mt-20'],
       elements: [
          {
             id: 'app-preview-image',
@@ -155,8 +188,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
-         'pb-20',
+         'mt-20',
          'mx-auto',
          'w-full',
          'max-w-screen-md',
@@ -200,7 +232,7 @@ export const sunRayPage: SunRayPageType = {
    },
    userResearchKeyInsightsSection: {
       id: 'sunray-user-research-key-insights',
-      classNames: ['flex', 'flex-col', 'space-y-6'],
+      classNames: ['flex', 'flex-col', 'space-y-6', 'mt-20'],
       elements: [
          {
             id: 'user-research-key-insights-block-heading',
@@ -219,11 +251,11 @@ export const sunRayPage: SunRayPageType = {
                'px-4',
                'sm:px-8',
                'md:px-12',
-               'mx-auto',
-               'flex',
-               'flex-col',
-               'md:flex-row',
                'gap-6',
+               'grid',
+               'grid-cols-1',
+               'md:grid-cols-2',
+               'lg:grid-cols-4',
             ],
             elementType: ELEMENT_TYPES.CONTAINER,
             elements: [
@@ -385,7 +417,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -423,7 +455,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -453,7 +485,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -491,7 +523,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -529,7 +561,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -567,7 +599,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -613,7 +645,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -651,7 +683,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -677,7 +709,7 @@ export const sunRayPage: SunRayPageType = {
    },
    usabilityStudyFindingsSection: {
       id: 'sunray-usability-study-findings',
-      classNames: ['flex', 'flex-col', 'space-y-6', 'pt-20'],
+      classNames: ['flex', 'flex-col', 'space-y-6', 'mt-20'],
       elements: [
          {
             id: 'usability-study-findings-heading',
@@ -696,10 +728,10 @@ export const sunRayPage: SunRayPageType = {
                'px-4',
                'sm:px-8',
                'md:px-12',
-               'flex',
-               'flex-col',
-               'md:flex-row',
                'gap-6',
+               'grid',
+               'grid-cols-1',
+               'md:grid-cols-3',
             ],
             elementType: ELEMENT_TYPES.CONTAINER,
             elements: [
@@ -824,7 +856,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -890,7 +922,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'pb-6',
          'w-full',
          'max-w-screen-md',
@@ -917,7 +949,7 @@ export const sunRayPage: SunRayPageType = {
    },
    finalDesignMobileImagesSection: {
       id: 'sunray-final-design-mobile-images',
-      classNames: ['w-full', 'py-15', 'px-4', 'sm:px-8', 'md:px-40', 'bg-neutral-900'],
+      classNames: ['w-full', 'py-10', 'px-4', 'sm:px-8', 'md:px-40', 'bg-neutral-900'],
       elements: [
          {
             id: 'final-design-mobile-heading',
@@ -929,7 +961,14 @@ export const sunRayPage: SunRayPageType = {
          },
          {
             id: 'final-design-mobile-image-container',
-            classNames: ['w-full', 'grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-4', 'gap-15'],
+            classNames: [
+               'w-full',
+               'grid',
+               'grid-cols-1',
+               'md:grid-cols-2',
+               'lg:grid-cols-4',
+               'gap-15',
+            ],
             elementType: ELEMENT_TYPES.CONTAINER,
             elements: [
                {
@@ -1002,7 +1041,7 @@ export const sunRayPage: SunRayPageType = {
    },
    finalDesignDesktopImagesSection: {
       id: 'sunray-final-design-desktop-images',
-      classNames: ['w-full', 'py-15', 'px-4', 'sm:px-8', 'md:px-40', 'bg-neutral-900'],
+      classNames: ['w-full', 'py-10', 'px-4', 'sm:px-8', 'md:px-40', 'bg-neutral-900', 'mt-20'],
       elements: [
          {
             id: 'final-design-desktop-heading',
@@ -1129,7 +1168,7 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
+         'mt-20',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
@@ -1150,7 +1189,7 @@ export const sunRayPage: SunRayPageType = {
             type: BLOCK_TYPES.PARAGRAPH,
             elementType: ELEMENT_TYPES.BLOCK,
             text: 'Designing SunRays was an exciting journey in crafting a modern, fashion-forward e-commerce experience. Iterating through research, wireframes, and usability testing helped me refine every detail — from product discovery to checkout. This project strengthened my skills in responsive web design and reinforced the importance of balancing aesthetics with usability.',
-         }
+         },
       ],
    },
    closingReflectionSection: {
@@ -1159,8 +1198,8 @@ export const sunRayPage: SunRayPageType = {
          'flex',
          'flex-col',
          'space-y-6',
-         'pt-20',
-         'pb-20',
+         'mt-20',
+         'mb-30',
          'w-full',
          'max-w-screen-md',
          'mx-auto',
