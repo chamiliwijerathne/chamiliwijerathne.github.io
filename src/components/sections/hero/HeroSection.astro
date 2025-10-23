@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { IMAGE_LOADING } from '../../blocks';
 import type { HeroSectionType as Props } from './hero.types';
 import { ContainerRenderer } from '../../utils';
+import { IMAGES } from '../../../content/constants/images';
 
 const { id, backgroundImage, classNames, img, style, elements } = Astro.props as Props;
 
@@ -22,7 +23,7 @@ const backgroundImageClasses = Array.isArray(backgroundImage?.classNames)
 const backgroundImageStyle = backgroundImage?.style || {};
 ---
 
-<section class={classes} id={id} style={style}>
+<section class="flex flex-col lg:flex-row-reverse" id={id} style={style}>
    {
       backgroundImage && (
          <div
@@ -34,16 +35,36 @@ const backgroundImageStyle = backgroundImage?.style || {};
    }
    {
       img && (
-         <Image
-            src={img.src as ImageMetadata}
-            alt={img.alt || ''}
-            class={imgClasses}
-            style={img.style}
-            loading={(img.loading as any) || IMAGE_LOADING.EAGER}
-            srcset={img.srcset || undefined}
-            sizes={img.sizes || undefined}
-         />
+         <div class="w-full lg:w-1/2">
+            <picture>
+               <source
+                  media="(min-width: 1024px)"
+                  srcset='/src/assets/images/heroHomePage.svg'
+               />
+               <source
+                  media="(min-width: 768px)"
+                  srcset='/src/assets/images/heroHomePage.svg'
+               />
+               <Image
+                  src={IMAGES.HERO_HOME_PAGE_MOBILE as ImageMetadata}
+                  alt={img.alt || ''}
+                  class='w-full h-auto object-cover'
+                  style={img.style}
+                  loading={(img.loading as any) || IMAGE_LOADING.EAGER}
+                  srcset={img.srcset || undefined}
+                  sizes={img.sizes || undefined}
+               />
+            </picture>
+         </div>
       )
    }
-   {elements && elements.map((element) => <ContainerRenderer {...element} />)}
+   {
+      elements && elements.length ? (
+         <div class="w-full lg:w-1/2 lg:mt-[80px] lg:py-12 px-4 sm:px-8 md:px-16 lg:pl-24 lg:pr-0">
+            {elements?.map((element) => (
+               <ContainerRenderer {...element} />
+            ))}
+         </div>
+      ) : null
+   }
 </section>
