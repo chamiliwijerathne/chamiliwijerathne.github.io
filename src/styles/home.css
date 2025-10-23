@@ -33,7 +33,7 @@
 .home-featured-section {
    /* @apply flex flex-col justify-center space-y-20;
    @apply md:mt-[194px] mx-auto md:max-w-[992px]; */
-   @apply flex flex-col justify-center space-y-10 lg:space-y-20 mt-10 lg:mt-24 mx-auto max-w-full md:max-w-3xl lg:max-w-4xl px-4 sm:px-8 md:px-16;
+   @apply flex flex-col justify-center space-y-10 lg:space-y-20 mt-10 lg:mt-24 mx-auto md:max-w-[992px] px-4 sm:px-8 md:px-16;
 }
 
 .featured-heading {
