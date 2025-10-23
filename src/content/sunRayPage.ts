@@ -8,12 +8,12 @@ export const sunRayPage: SunRayPageType = {
    heroSection: {
       id: 'sunray-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['sunray-hero-section'],
+      classNames: ['pt-[80px]'],
       img: {
          id: 'sunray-hero-image',
          alt: 'SunRay Hero Image',
          src: IMAGES.HERO_SUN_RAY_PAGE as ImageMetadata,
-         classNames: ['sunray-hero-image', 'w-full', 'h-full', 'object-cover'],
+         classNames: ['w-full', 'h-auto', 'object-cover'],
          loading: IMAGE_LOADING.EAGER,
       },
    },

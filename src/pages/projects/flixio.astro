@@ -27,8 +27,8 @@ const {
 } = flixioPage;
 ---
 
-<Layout>
-   <main slot="main" class="flixio" id="flixio">
+<Layout bodyClassNames={['flixio']}>
+   <main slot="main" class="flixio-main" id="flixio">
       <HeroSection {...heroSection as HeroSectionType} />
 
       <SectionTemplate {...overviewSection} />

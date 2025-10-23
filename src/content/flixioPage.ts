@@ -8,12 +8,12 @@ export const flixioPage: FlixioPageType = {
    heroSection: {
       id: 'flixio-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['flixio-hero-section'],
+      classNames: ['pt-[80px]'],
       img: {
          id: 'flixio-hero-image',
          alt: 'Flixio Hero Image',
          src: IMAGES.HERO_FLIXIO_PAGE as ImageMetadata,
-         classNames: ['flixio-hero-image', 'w-full', 'h-full', 'object-cover'],
+         classNames: ['w-full', 'h-auto', 'object-cover'],
          loading: IMAGE_LOADING.EAGER,
       },
    },
@@ -57,10 +57,10 @@ export const flixioPage: FlixioPageType = {
          'px-4',
          'sm:px-8',
          'md:px-12',
-         'flex',
-         'flex-col',
-         'md:flex-row',
          'gap-6',
+         'grid',
+         'grid-cols-1',
+         'md:grid-cols-3',
       ],
       elements: [
          {
@@ -247,11 +247,11 @@ export const flixioPage: FlixioPageType = {
                'px-4',
                'sm:px-8',
                'md:px-12',
-               'mx-auto',
-               'flex',
-               'flex-col',
-               'md:flex-row',
                'gap-6',
+               'grid',
+               'grid-cols-1',
+               'md:grid-cols-2',
+               'lg:grid-cols-4',
             ],
             elementType: ELEMENT_TYPES.CONTAINER,
             elements: [
@@ -310,6 +310,8 @@ export const flixioPage: FlixioPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/flixioNumberTwo.svg',
                         alt: 'Seamless Cross-Device Experience',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'seamless-cross-device-experience-paragraph-bold',
@@ -345,6 +347,8 @@ export const flixioPage: FlixioPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/flixioNumberThree.svg',
                         alt: 'Cluttered Interfaces Cause Confusion',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'cluttered-interfaces-cause-confusion-paragraph-bold',
@@ -380,6 +384,8 @@ export const flixioPage: FlixioPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/flixioNumberFour.svg',
                         alt: 'Personalized Suggestions Boost Enjoyment',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'personalized-suggestions-boost-enjoyment-paragraph-bold',

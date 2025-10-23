@@ -30,8 +30,8 @@ const {
 } = sunRayPage;
 ---
 
-<Layout>
-   <main slot="main" class="sunray" id="sunray">
+<Layout bodyClassNames={['sunray']}>
+   <main slot="main" class="sunray-main" id="sunray">
       <HeroSection {...heroSection as HeroSectionType} />
 
       <SectionTemplate {...overviewSection} />

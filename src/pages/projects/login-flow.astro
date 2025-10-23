@@ -17,8 +17,8 @@ const {
 } = loginFlowPage;
 ---
 
-<Layout>
-   <main slot="main" class="loginFlow" id="loginFlow">
+<Layout bodyClassNames={['login-flow']}>
+   <main slot="main" class="login-flow-main" id="loginFlow">
       <HeroSection {...heroSection as HeroSectionType} />
 
       <SectionTemplate {...overviewSection} />

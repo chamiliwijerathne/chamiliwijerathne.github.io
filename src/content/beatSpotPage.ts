@@ -8,12 +8,12 @@ export const beatSpotPage: BeatSpotPageType = {
    heroSection: {
       id: 'beatspot-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['beatspot-hero-section'],
+      classNames: ['pt-[80px]'],
       img: {
          id: 'beatspot-hero-image',
          alt: 'BeatSpot Hero Image',
          src: IMAGES.HERO_BEAT_SPOT_PAGE as ImageMetadata,
-         classNames: ['beatspot-hero-image', 'w-full', 'h-full', 'object-cover'],
+         classNames: ['w-full', 'h-auto', 'object-cover'],
          loading: IMAGE_LOADING.EAGER,
       },
    },
@@ -57,10 +57,10 @@ export const beatSpotPage: BeatSpotPageType = {
          'px-4',
          'sm:px-8',
          'md:px-12',
-         'flex',
-         'flex-col',
-         'md:flex-row',
          'gap-6',
+         'grid',
+         'grid-cols-1',
+         'md:grid-cols-3',
       ],
       elements: [
          {
@@ -292,11 +292,11 @@ export const beatSpotPage: BeatSpotPageType = {
                'px-4',
                'sm:px-8',
                'md:px-12',
-               'mx-auto',
-               'flex',
-               'flex-col',
-               'md:flex-row',
                'gap-6',
+               'grid',
+               'grid-cols-1',
+               'md:grid-cols-2',
+               'lg:grid-cols-4',
             ],
             elementType: ELEMENT_TYPES.CONTAINER,
             elements: [
@@ -355,6 +355,8 @@ export const beatSpotPage: BeatSpotPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/beatSpotNumberTwo.svg',
                         alt: 'Complicated Booking Process',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'user-research-key-insights-scattered-event-paragraph-bold',
@@ -390,6 +392,8 @@ export const beatSpotPage: BeatSpotPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/beatSpotNumberThree.svg',
                         alt: 'Limited Personalization & Recommendations',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'user-research-key-insights-scattered-event-paragraph-bold',
@@ -425,6 +429,8 @@ export const beatSpotPage: BeatSpotPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/beatSpotNumberFour.svg',
                         alt: 'Limited Information Available',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'user-research-key-insights-scattered-event-paragraph-bold',
@@ -763,10 +769,10 @@ export const beatSpotPage: BeatSpotPageType = {
                'px-4',
                'sm:px-8',
                'md:px-12',
-               'flex',
-               'flex-col',
-               'md:flex-row',
                'gap-6',
+               'grid',
+               'grid-cols-1',
+               'md:grid-cols-3',
             ],
             elementType: ELEMENT_TYPES.CONTAINER,
             elements: [
@@ -825,6 +831,8 @@ export const beatSpotPage: BeatSpotPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/beatSpotNumberTwo.svg',
                         alt: 'No Reminder Option in Favorites',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'uno-reminder-option-paragraph-bold',
@@ -860,6 +868,8 @@ export const beatSpotPage: BeatSpotPageType = {
                         type: BLOCK_TYPES.IMAGE,
                         src: '/src/assets/images/beatSpotNumberThree.svg',
                         alt: 'Event Details Lacked Map Integration',
+                        width: 48,
+                        height: 48,
                      },
                      {
                         id: 'event-details-lacked-map-integration-paragraph-bold',

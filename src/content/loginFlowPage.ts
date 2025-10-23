@@ -8,7 +8,7 @@ export const loginFlowPage: LoginFlowPageType = {
    heroSection: {
       id: 'loginFlow-hero',
       type: SECTION_TYPES.HERO,
-      classNames: ['loginFlow-hero-section'],
+      classNames: ['pt-[80px]'],
       img: {
          id: 'loginFlow-hero-image',
          alt: 'LoginFlow Hero Image',
@@ -57,10 +57,10 @@ export const loginFlowPage: LoginFlowPageType = {
          'px-4',
          'sm:px-8',
          'md:px-12',
-         'flex',
-         'flex-col',
-         'md:flex-row',
          'gap-6',
+         'grid',
+         'grid-cols-1',
+         'md:grid-cols-3',
       ],
       elements: [
          {

@@ -8,8 +8,8 @@ import { SectionTemplate } from '../components/sections/sectionTemplate';
 const { heroSection, projectsSection } = projectsPage;
 ---
 
-<Layout>
-   <main slot="main" class="projects" id="projects">
+<Layout bodyClassNames={['projects']}>
+   <main slot="main" class="projects-main" id="projects">
       <HeroSection {...heroSection  as HeroSectionType} />
 
       <SectionTemplate {...projectsSection} />

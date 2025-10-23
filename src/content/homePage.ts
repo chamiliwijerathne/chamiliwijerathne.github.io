@@ -1,4 +1,4 @@
-import { BUTTON_VARIANTS, LINK_TARGETS } from '../components/blocks';
+import { BUTTON_VARIANTS, IMAGE_LOADING, LINK_TARGETS } from '../components/blocks';
 import { BLOCK_TYPES, ELEMENT_TYPES } from '../components/utils';
 import { SECTION_TYPES } from '../components/sections';
 import type { HomePageType } from '../types';
@@ -81,7 +81,7 @@ export const homePage: HomePageType = {
          srcDesktop: '/src/assets/images/heroHomePage.svg',
          alt: 'Hero',
          classNames: ['w-full', 'h-auto', 'object-cover'],
-         loading: 'eager',
+         loading: IMAGE_LOADING.EAGER,
          wrapperClassNames: ['w-full', 'lg:w-1/2']
       },
    },

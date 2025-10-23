@@ -5,6 +5,8 @@ import { footer } from '../content/footer';
 import '../styles/index.css';
 
 const { title } = Astro.slots;
+const bodyClassNames = Astro.props.bodyClassNames;
+const bodyClasses: string = Array.isArray(bodyClassNames) ? bodyClassNames.join(' ') : bodyClassNames || '';
 ---
 
 <!doctype html>
@@ -15,7 +17,7 @@ const { title } = Astro.slots;
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <title>{title}</title>
    </head>
-   <body>
+   <body class={bodyClasses}>
       <slot name="header">
          <header>
             <NavBar {...navBar} />

@@ -29,8 +29,8 @@ const {
 } = beatSpotPage;
 ---
 
-<Layout>
-   <main slot="main" class="beatspot" id="beatspot">
+<Layout bodyClassNames={['beatspot']}>
+   <main slot="main" class="beatspot-main" id="beatspot">
       <HeroSection {...heroSection as HeroSectionType} />
 
       <SectionTemplate {...overviewSection} />
