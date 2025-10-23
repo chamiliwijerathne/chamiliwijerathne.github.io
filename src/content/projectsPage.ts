@@ -36,7 +36,6 @@ export const projectsPage: ProjectsPageType = {
                'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
                'rounded-3xl',
                'overflow-hidden',
-               // 'md:h-[524px]',
                'bg-neutral-900',
             ],
             elementType: ELEMENT_TYPES.BLOCK,
@@ -44,7 +43,7 @@ export const projectsPage: ProjectsPageType = {
             image: {
                id: 'beat-spot-media-card-image',
                type: BLOCK_TYPES.IMAGE,
-               src: '/src/assets/images/beatSpotMediaCard.svg',
+               src: '/images/beat-spot/beatSpotMediaCard.svg',
                alt: 'Beat Spot Media Card',
                position: 'right',
                classNames: ['w-full', 'h-full', 'object-cover'],
@@ -107,7 +106,7 @@ export const projectsPage: ProjectsPageType = {
             image: {
                id: 'sun-ray-media-card-image',
                type: BLOCK_TYPES.IMAGE,
-               src: '/src/assets/images/sunRayMediaCard.svg',
+               src: '/images/sun-ray/sunRayMediaCard.svg',
                alt: 'Sun Ray Media Card',
                position: 'left',
                classNames: ['w-full', 'h-full', 'object-cover'],
@@ -170,7 +169,7 @@ export const projectsPage: ProjectsPageType = {
             image: {
                id: 'flixio-media-card-image',
                type: BLOCK_TYPES.IMAGE,
-               src: '/src/assets/images/flixioMediaCard.svg',
+               src: '/images/flixio/flixioMediaCard.svg',
                alt: 'Flixio Media Card',
                position: 'right',
                classNames: ['w-full', 'h-full', 'object-cover'],
@@ -225,7 +224,6 @@ export const projectsPage: ProjectsPageType = {
                'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
                'rounded-3xl',
                'overflow-hidden',
-               // 'md:h-[524px]',
                'bg-neutral-900',
             ],
             elementType: ELEMENT_TYPES.BLOCK,
@@ -233,7 +231,7 @@ export const projectsPage: ProjectsPageType = {
             image: {
                id: 'login-flow-media-card-image',
                type: BLOCK_TYPES.IMAGE,
-               src: '/src/assets/images/loginFlowMediaCard.svg',
+               src: '/images/login-flow/loginFlowMediaCard.svg',
                alt: 'Login Flow Media Card',
                position: 'left',
                classNames: ['w-full', 'h-full', 'object-cover'],
@@ -288,7 +286,6 @@ export const projectsPage: ProjectsPageType = {
                'shadow-[0_6px_64px_0_rgba(112,144,176,0.1)]',
                'rounded-3xl',
                'overflow-hidden',
-               // 'md:h-[524px]',
                'bg-neutral-900',
             ],
             elementType: ELEMENT_TYPES.BLOCK,
@@ -296,7 +293,7 @@ export const projectsPage: ProjectsPageType = {
             image: {
                id: 'portfolio-media-card-image',
                type: BLOCK_TYPES.IMAGE,
-               src: '/src/assets/images/portfolioMediaCard.svg',
+               src: '/images/portfolio/portfolioMediaCard.svg',
                alt: 'Portfolio Media Card',
                position: 'right',
                classNames: ['w-full', 'h-full', 'object-cover'],

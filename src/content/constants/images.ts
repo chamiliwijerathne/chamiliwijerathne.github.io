@@ -1,7 +1,6 @@
 import logo from './../../assets/images/logo.svg';
 import footerImage from './../../assets/images/footerBgImage.svg';
-import heroHomePage from './../../assets/images/heroHomePage.svg';
-import heroHomePageMobile from './../../assets/images/heroHomePageMobile.png';
+import heroHomePageMobile from './../../../public/images/home/heroHomePageMobile.png';
 import heroProjectsPage from './../../assets/images/heroProjectsPage.svg';
 import heroSunRayPage from './../../assets/images/heroSunRayPage.svg';
 import beatSpotPage from './../../assets/images/heroBeatSpotPage.svg';
@@ -10,14 +9,11 @@ import loginFlowPage from './../../assets/images/heroLoginFlowPage.svg';
 import instagramIcon from './../../assets/icons/instagram.svg';
 import linkedinIcon from './../../assets/icons/linkedin.svg';
 import gmailIcon from './../../assets/icons/gmail.svg';
-import sunRayMediaCard from './../../assets/images/sunRayMediaCard.png';
-import flixioAppPreview from './../../assets/images/flixioPreview.svg';
 
 
 export const IMAGES = {
    LOGO: logo,
    FOOTER: footerImage,
-   HERO_HOME_PAGE: heroHomePage,
    HERO_HOME_PAGE_MOBILE: heroHomePageMobile,
    HERO_PROJECTS_PAGE: heroProjectsPage,
    HERO_SUN_RAY_PAGE: heroSunRayPage,
@@ -26,8 +22,5 @@ export const IMAGES = {
    HERO_LOGIN_FLOW_PAGE: loginFlowPage,
    INSTAGRAM_ICON: instagramIcon,
    LINKEDIN_ICON: linkedinIcon,
-   GMAIL_ICON: gmailIcon,
-   SUN_RAY_MEDIA_CARD: sunRayMediaCard,
-
-   FLIXIO_APP_PREVIEW: flixioAppPreview
+   GMAIL_ICON: gmailIcon
 } as const;
