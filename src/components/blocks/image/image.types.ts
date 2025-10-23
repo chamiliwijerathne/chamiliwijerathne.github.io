@@ -26,6 +26,8 @@ export interface ImageBlock extends BaseBlock {
    loading?: ImageLoading;
    figure?: FigureProps;
    caption?: CaptionProps;
+   srcset?: string;
+   sizes?: string;
 }
 
 export interface ImageBlockProps extends Omit<ImageBlock, 'src'> {

@@ -953,7 +953,7 @@ export const sunRayPage: SunRayPageType = {
       elements: [
          {
             id: 'final-design-mobile-heading',
-            classNames: ['mb-10'],
+            classNames: ['mb-5'],
             elementType: ELEMENT_TYPES.BLOCK,
             type: BLOCK_TYPES.HEADING,
             text: 'Mobile Screens',
@@ -1045,7 +1045,7 @@ export const sunRayPage: SunRayPageType = {
       elements: [
          {
             id: 'final-design-desktop-heading',
-            classNames: ['mb-10'],
+            classNames: ['mb-5'],
             elementType: ELEMENT_TYPES.BLOCK,
             type: BLOCK_TYPES.HEADING,
             text: 'Desktop Screens',

@@ -6,9 +6,8 @@ import { ContainerRenderer } from '../../utils';
 
 const { id, backgroundImage, classNames, img, style, elements } = Astro.props as Props;
 
-const baseClass = 'hero-section';
 const extraClasses = Array.isArray(classNames) ? classNames.join(' ') : classNames || '';
-const classes = [baseClass, extraClasses].filter(Boolean).join(' ');
+const classes = [extraClasses].filter(Boolean).join(' ');
 
 const imgClasses = [
    Array.isArray(img?.classNames) ? img.classNames.join(' ') : img?.classNames || '',
@@ -17,16 +16,34 @@ const imgClasses = [
    .join(' ');
 
 const backgroundImageUrl = backgroundImage?.url || '';
-const backgroundImageClasses = Array.isArray(backgroundImage?.classNames) ? backgroundImage.classNames.join(' ') : backgroundImage?.classNames || '';
+const backgroundImageClasses = Array.isArray(backgroundImage?.classNames)
+   ? backgroundImage.classNames.join(' ')
+   : backgroundImage?.classNames || '';
 const backgroundImageStyle = backgroundImage?.style || {};
 ---
 
 <section class={classes} id={id} style={style}>
    {
       backgroundImage && (
-         <div class={backgroundImageClasses} style={`background-image: url(${backgroundImageUrl});`} style={backgroundImageStyle} />
+         <div
+            class={backgroundImageClasses}
+            style={`background-image: url(${backgroundImageUrl});`}
+            style={backgroundImageStyle}
+         />
       )
    }
-   {img && <Image src={img.src as ImageMetadata} alt={img.alt || ''} class={imgClasses} style={img.style} loading={img.loading as any || IMAGE_LOADING.EAGER} />}
+   {
+      img && (
+         <Image
+            src={img.src as ImageMetadata}
+            alt={img.alt || ''}
+            class={imgClasses}
+            style={img.style}
+            loading={(img.loading as any) || IMAGE_LOADING.EAGER}
+            srcset={img.srcset || undefined}
+            sizes={img.sizes || undefined}
+         />
+      )
+   }
    {elements && elements.map((element) => <ContainerRenderer {...element} />)}
 </section>

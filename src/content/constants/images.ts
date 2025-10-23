@@ -1,6 +1,7 @@
 import logo from './../../assets/images/logo.svg';
 import footerImage from './../../assets/images/footerBgImage.svg';
 import heroHomePage from './../../assets/images/heroHomePage.svg';
+import heroHomePageMobile from './../../assets/images/heroHomePageMobile.svg';
 import heroProjectsPage from './../../assets/images/heroProjectsPage.svg';
 import heroSunRayPage from './../../assets/images/heroSunRayPage.svg';
 import beatSpotPage from './../../assets/images/heroBeatSpotPage.svg';
@@ -17,6 +18,7 @@ export const IMAGES = {
    LOGO: logo,
    FOOTER: footerImage,
    HERO_HOME_PAGE: heroHomePage,
+   HERO_HOME_PAGE_MOBILE: heroHomePageMobile,
    HERO_PROJECTS_PAGE: heroProjectsPage,
    HERO_SUN_RAY_PAGE: heroSunRayPage,
    HERO_FLIXIO_PAGE: heroFlixioPage,
