@@ -5,11 +5,16 @@ import type { HeroSectionType as Props } from './hero.types';
 import { ContainerRenderer } from '../../utils';
 import { IMAGES } from '../../../content/constants/images';
 
-const { id, backgroundImage, classNames, img, style, elements } = Astro.props as Props;
+const { id, backgroundImage, classNames, img, style, elements, elementsWrapperClassNames } = Astro.props as Props;
 
 const extraClasses = Array.isArray(classNames) ? classNames.join(' ') : classNames || '';
 const classes = [extraClasses].filter(Boolean).join(' ');
 
+const imgWrapperClasses = img?.wrapperClassNames
+   ? Array.isArray(img.wrapperClassNames)
+      ? img.wrapperClassNames.join(' ')
+      : img.wrapperClassNames
+   : '';
 const imgClasses = [
    Array.isArray(img?.classNames) ? img.classNames.join(' ') : img?.classNames || '',
 ]
@@ -21,9 +26,14 @@ const backgroundImageClasses = Array.isArray(backgroundImage?.classNames)
    ? backgroundImage.classNames.join(' ')
    : backgroundImage?.classNames || '';
 const backgroundImageStyle = backgroundImage?.style || {};
+const elementsWrapperClass = elementsWrapperClassNames
+   ? Array.isArray(elementsWrapperClassNames)
+      ? elementsWrapperClassNames.join(' ')
+      : elementsWrapperClassNames
+   : '';
 ---
 
-<section class="flex flex-col lg:flex-row-reverse" id={id} style={style}>
+<section class={classes} id={id} style={style}>
    {
       backgroundImage && (
          <div
@@ -35,20 +45,24 @@ const backgroundImageStyle = backgroundImage?.style || {};
    }
    {
       img && (
-         <div class="w-full lg:w-1/2">
+         <div class={imgWrapperClasses}>
             <picture>
-               <source
-                  media="(min-width: 1024px)"
-                  srcset='/src/assets/images/heroHomePage.svg'
-               />
-               <source
-                  media="(min-width: 768px)"
-                  srcset='/src/assets/images/heroHomePage.svg'
-               />
+               {img.srcDesktop && (
+                  <source
+                     media="(min-width: 1024px)"
+                     srcset={img.srcDesktop as string}
+                  />
+               )}
+               {img.srcTablet && (
+                  <source
+                     media="(min-width: 640px)"
+                     srcset={img.srcTablet as string}
+                  />
+               )}
                <Image
-                  src={IMAGES.HERO_HOME_PAGE_MOBILE as ImageMetadata}
+                  src={img.src as ImageMetadata}
                   alt={img.alt || ''}
-                  class='w-full h-auto object-cover'
+                  class={imgClasses}
                   style={img.style}
                   loading={(img.loading as any) || IMAGE_LOADING.EAGER}
                   srcset={img.srcset || undefined}
@@ -60,7 +74,7 @@ const backgroundImageStyle = backgroundImage?.style || {};
    }
    {
       elements && elements.length ? (
-         <div class="w-full lg:w-1/2 lg:mt-[80px] lg:py-12 px-4 sm:px-8 md:px-16 lg:pl-24 lg:pr-0">
+         <div class={elementsWrapperClass}>
             {elements?.map((element) => (
                <ContainerRenderer {...element} />
             ))}

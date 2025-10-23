@@ -8,14 +8,15 @@ export const homePage: HomePageType = {
    heroSection: {
       id: 'home-hero-section',
       type: SECTION_TYPES.HERO,
-      classNames: ['home-hero-section'],
+      classNames: ['flex', 'flex-col', 'lg:flex-row-reverse'],
+      elementsWrapperClassNames: ['w-full', 'lg:w-1/2', 'lg:mt-[80px]', 'lg:py-12', 'px-4', 'sm:px-8', 'md:px-16', 'lg:pl-24', 'lg:pr-0'],
       elements: [
          {
             id: 'role-text',
             elementType: ELEMENT_TYPES.BLOCK,
             type: BLOCK_TYPES.PARAGRAPH,
             text: 'UI/UX DESIGNER',
-            classNames: ['home-hero-role'],
+            classNames: ['text-2xl', 'font-bold', 'text-primary-500', 'mb-3'],
          },
          {
             id: 'intro-heading',
@@ -38,12 +39,12 @@ export const homePage: HomePageType = {
             elementType: ELEMENT_TYPES.BLOCK,
             type: BLOCK_TYPES.PARAGRAPH,
             text: 'A passionate UI/UX designer. I create clean, user-friendly digital experiences that bring ideas to life through thoughtful design and usability.',
-            classNames: ['role-description'],
+            classNames: ['md:text-2xl', 'text-neutral-400', 'mb-8'],
          },
          {
             id: 'cta-buttons-container',
             elementType: ELEMENT_TYPES.CONTAINER,
-            classNames: ['cta-container'],
+            classNames: ['flex', 'space-x-4'],
             elements: [
                {
                   id: 'projects-button',
@@ -75,10 +76,13 @@ export const homePage: HomePageType = {
       ],
       img: {
          id: 'home-hero-image',
-         src: IMAGES.HERO_HOME_PAGE as ImageMetadata,
+         src: IMAGES.HERO_HOME_PAGE_MOBILE,
+         srcTablet: '/src/assets/images/heroHomePage.svg',
+         srcDesktop: '/src/assets/images/heroHomePage.svg',
          alt: 'Hero',
-         classNames: ['hero-img'],
+         classNames: ['w-full', 'h-auto', 'object-cover'],
          loading: 'eager',
+         wrapperClassNames: ['w-full', 'lg:w-1/2']
       },
    },
    featuredSection: {

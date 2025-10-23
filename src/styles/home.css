@@ -1,38 +1,9 @@
-/* .home {
-   @apply px-30;
-} */
-
 .home {
-   /* @apply px-4 sm:px-8 md:px-16 lg:px-24 xl:px-30; */
    @apply relative;
-}
-
-/* Hero Section */
-.home-hero-section {
-   /* @apply py-12; */
-   /* @apply md:max-w-[700px]; */
-}
-
-.hero-img {
-   /* @apply absolute top-0 right-0 z-[-1]; */
-}
-
-.home-hero-role {
-   @apply text-2xl font-bold text-primary-500 mb-3;
-}
-
-.role-description {
-   @apply md:text-2xl text-neutral-400 mb-8;
-}
-
-.cta-container {
-   @apply flex space-x-4;
 }
 
 /* Featured Section */
 .home-featured-section {
-   /* @apply flex flex-col justify-center space-y-20;
-   @apply md:mt-[194px] mx-auto md:max-w-[992px]; */
    @apply flex flex-col justify-center space-y-10 lg:space-y-20 mt-10 lg:mt-24 mx-auto md:max-w-[992px] px-4 sm:px-8 md:px-16;
 }
 

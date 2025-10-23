@@ -4,5 +4,10 @@ import type { ImageBlock } from "../../blocks";
 
 export interface HeroSectionType extends BaseSection {
   type: typeof SECTION_TYPES.HERO;
-  img?: Omit<ImageBlock, 'type'>;
+  elementsWrapperClassNames?: string[];
+  img?: Omit<ImageBlock, 'type'> & {
+    wrapperClassNames?: string[];
+    srcTablet?: string | ImageMetadata;
+    srcDesktop?: string | ImageMetadata;
+  };
 }
