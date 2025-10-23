@@ -8,7 +8,7 @@ const { leftItems, rightItems } = Astro.props;
 ---
 
 <nav>
-   <div class="absolute px-30 h-[80px] z-50 flex justify-between">
+   <div class="absolute w-full px-4 sm:px-8 md:px-16 lg:px-24 h-[80px] z-50 flex justify-between">
       <div class="flex-shrink-0 flex items-center">
          {
             leftItems?.map((item) => {
@@ -63,35 +63,111 @@ const { leftItems, rightItems } = Astro.props;
          }
       </div>
 
-      <div class="flex items-center md:hidden">
-         <button id="menu-btn" class="font-semibold focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex items-center md:hidden z-20">
+         <button id="menu-btn" class="font-semibold focus:outline-none cursor-pointer text-black">
+            <svg
+               id="icon-hamburger"
+               class="w-6 h-6 block"
+               fill="none"
+               stroke="currentColor"
+               viewBox="0 0 24 24"
+            >
                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
+            <svg
+               id="icon-close"
+               class="w-6 h-6 hidden"
+               fill="none"
+               stroke="currentColor"
+               viewBox="0 0 24 24"
+            >
+               <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
          </button>
       </div>
    </div>
-   <div id="mobile-menu" class="hidden md:hidden px-4 pb-3 space-y-2">
-      {
-         rightItems?.map((item) => {
-            if (item.type === 'link') {
-               return (
-                  <a
-                     href={item.href.url}
-                     target={item.href.target}
-                     rel={item.href.rel?.join(' ')}
-                     class="block font-semibold text-lg"
-                  >
-                     {item.label}
-                  </a>
-               );
-            }
-            return null;
-         })
-      }
+   <div id="mobile-menu" class="fixed w-full z-10 bg-white md:hidden hidden">
+      <div
+         class="mt-[80px] flex flex-col items-center justify-center space-y-4 border-t border-gray-300 py-4"
+      >
+         {
+            rightItems?.map((item) => {
+               if (item.type === 'link') {
+                  return (
+                     <a
+                        href={item.href.url}
+                        target={item.href.target}
+                        rel={item.href.rel?.join(' ')}
+                        class={`block font-semibold text-lg pb-0.5 after:content-[''] after:block after:h-0.5 after:w-full after:rounded after:transition-all after:duration-100 ${currentPath === item.href.url ? 'after:bg-black' : 'after:bg-transparent hover:after:bg-black'} hover:text-black hover:bg-neutral-100 transition-colors duration-150`}
+                     >
+                        {item.label}
+                     </a>
+                  );
+               }
+               return null;
+            })
+         }
+      </div>
    </div>
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         const btn = document.getElementById('menu-btn');
+         const menu = document.getElementById('mobile-menu');
+         const iconHamburger = document.getElementById('icon-hamburger');
+         const iconClose = document.getElementById('icon-close');
+         let open = false;
+
+         // Toggle menu on button click
+         btn?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            open = !open;
+            menu?.classList.toggle('hidden', !open);
+            iconHamburger?.classList.toggle('hidden', open);
+            iconClose?.classList.toggle('hidden', !open);
+            document.body.style.overflow = open ? 'hidden' : '';
+         });
+
+         // Close menu when clicking a link inside the menu
+         menu?.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+               open = false;
+               menu.classList.add('hidden');
+               iconHamburger?.classList.remove('hidden');
+               iconClose?.classList.add('hidden');
+               document.body.style.overflow = '';
+            });
+         });
+
+         // Close menu when clicking outside of menu or button
+         document.addEventListener('click', (event: any) => {
+            if (!open) return;
+            if (menu && btn && !menu.contains(event?.target) && !btn.contains(event?.target)) {
+               open = false;
+               menu?.classList.add('hidden');
+               iconHamburger?.classList.remove('hidden');
+               iconClose?.classList.add('hidden');
+               document.body.style.overflow = '';
+            }
+         });
+
+         // Optional: close menu on Escape key
+         document.addEventListener('keydown', (event) => {
+            if (open && event.key === 'Escape') {
+               open = false;
+               menu?.classList.add('hidden');
+               iconHamburger?.classList.remove('hidden');
+               iconClose?.classList.add('hidden');
+               document.body.style.overflow = '';
+            }
+         });
+      });
+   </script>
 </nav>

@@ -3,7 +3,7 @@
 }
 
 .btn-primary {
-   @apply bg-primary-500 font-bold hover:bg-primary-700 active:bg-primary-700;
+   @apply border-2 border-primary-500 bg-primary-500 font-bold hover:bg-primary-700 active:bg-primary-700;
 }
 
 .btn-secondary {
