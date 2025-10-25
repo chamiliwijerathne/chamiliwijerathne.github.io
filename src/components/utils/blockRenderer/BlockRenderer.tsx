@@ -1,6 +1,6 @@
 import { BLOCK_TYPES } from './block.constants';
 import type { Block } from './block.types';
-import { Button, Heading, List, MediaCard, Paragraph, Image } from '../../blocks';
+import { Button, Heading, List, MediaCard, Paragraph, Image, Input, TextArea } from '../../blocks';
 
 type Props = {
    block: Block;
@@ -20,6 +20,10 @@ export const BlockRenderer = ({ block }: Props) => {
          return <List {...block} />;
       case BLOCK_TYPES.IMAGE:
          return <Image {...block} />;
+      case BLOCK_TYPES.INPUT:
+         return <Input {...block} />;
+      case BLOCK_TYPES.TEXT_AREA:
+         return <TextArea {...block} />;
       default:
          return null;
    }

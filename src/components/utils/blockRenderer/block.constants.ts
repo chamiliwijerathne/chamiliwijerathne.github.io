@@ -13,4 +13,6 @@ export const BLOCK_TYPES = {
    MEDIA_CARD: 'mediaCard',
    LIST: 'list',
    LINK: 'link',
+   INPUT: 'input',
+   TEXT_AREA: 'textarea',
 } as const;

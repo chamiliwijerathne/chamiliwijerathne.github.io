@@ -541,14 +541,6 @@ export const flixioPage: FlixioPageType = {
             elementType: ELEMENT_TYPES.BLOCK,
             text: 'Focusing on the core features identified during user research, I sketched the first wireframes using pen and paper.',
          },
-         {
-            id: 'paper-wireframes-image',
-            type: BLOCK_TYPES.IMAGE,
-            elementType: ELEMENT_TYPES.BLOCK,
-            src: '/images/flixio/beatSpotPaperWireframes.svg',
-            alt: 'Flixio Paper Wireframes Image',
-            classNames: ['w-full', 'h-auto', 'object-cover'],
-         },
       ],
    },
    digitalWireframesSection: {
@@ -658,6 +650,12 @@ export const flixioPage: FlixioPageType = {
             text: 'Final Design',
             level: 4,
          },
+         {
+            id: 'final-design-paragraph',
+            type: BLOCK_TYPES.PARAGRAPH,
+            elementType: ELEMENT_TYPES.BLOCK,
+            text: 'Below are the final high-fidelity screens of Flixio, showcasing a seamless cross-platform streaming experience with consistent layouts, adaptive components, and a polished visual interface across mobile, tablet, and desktop.',
+         }
       ],
    },
    finalDesignMobileImagesSection: {

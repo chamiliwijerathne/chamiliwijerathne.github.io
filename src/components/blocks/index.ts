@@ -5,3 +5,5 @@ export * from './link';
 export * from './list';
 export * from './image';
 export * from './mediaCard';
+export * from './input';
+export * from './textarea';

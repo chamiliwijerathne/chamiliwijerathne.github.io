@@ -1,7 +1,16 @@
 ---
+import { HeroSection, SectionTemplate, type HeroSectionType } from '../components/sections';
+import { aboutPage } from '../content/aboutPage';
 import { Layout } from '../layouts';
+
+const { heroSection, aboutMeSection, eduSkillsSection } = aboutPage;
 ---
 
 <Layout bodyClassNames={['about']}>
-	<h1 slot="main" class="text-2xl">This is About Page</h1>
+	<main slot="main" class="about-main mx-4 sm:mx-8 md:mx-12" id="about">
+      <HeroSection {...heroSection  as HeroSectionType} />
+
+      <SectionTemplate {...aboutMeSection} />
+      <SectionTemplate {...eduSkillsSection} />
+   </main>
 </Layout>

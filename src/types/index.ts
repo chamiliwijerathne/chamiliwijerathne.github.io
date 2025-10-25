@@ -4,3 +4,5 @@ export * from './sunRayPage';
 export * from './beatSpot';
 export * from './flixioPage';
 export * from './loginFlowPage'
+export * from './about';
+export * from './contact';

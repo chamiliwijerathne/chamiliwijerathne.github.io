@@ -251,14 +251,6 @@ export const loginFlowPage: LoginFlowPageType = {
             elementType: ELEMENT_TYPES.BLOCK,
             text: 'Focusing on the core features identified during user research, I sketched the first wireframes using pen and paper.',
          },
-         {
-            id: 'paper-wireframes-image',
-            type: BLOCK_TYPES.IMAGE,
-            elementType: ELEMENT_TYPES.BLOCK,
-            src: '/images/login-flow/beatSpotPaperWireframes.svg',
-            alt: 'Login Flow Paper Wireframes Image',
-            classNames: ['w-full', 'h-auto', 'object-cover'],
-         },
       ],
    },
    digitalWireframesSection: {
