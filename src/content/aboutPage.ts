@@ -38,7 +38,7 @@ export const aboutPage: AboutPageType = {
             classNames: ['flex-1', 'max-w-md', 'w-full', 'h-auto'],
             type: BLOCK_TYPES.IMAGE,
             elementType: ELEMENT_TYPES.BLOCK,
-            src: '/images/about/about-me.svg',
+            src: '/images/about/about-me.png',
             alt: 'About Me Image',
          },
          {
